@@ -6,45 +6,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CM - Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&family=Judson:wght@400;700&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="./styles.css" type="text/tailwindcss" />
+    <style type="text/tailwindcss">
+        @layer utilities {
+            * {
+                box-sizing: border-box;
+            }
+            .background-gradient {
+                background: linear-gradient(90deg, #edc474 0%, #cb9d52 60.94%, #b6853c 100%);
+            }
+            h1, h3 {
+                font-family: "Judson", serif !important;
+            }
 
+            p {
+                font-family: "Inder", sans-serif;
+                line-height: 1.61rem;
+            }
+            .container {
+                @apply max-w-6xl mx-auto;
+            }
+            header:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top:0;
+                left: 0;
+                background: linear-gradient(90deg, #101611 24.69%, rgba(16, 22, 17, 0) 64.55%);
+            }
+            .project-item:before {
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 100%;
+                top:0;
+                left: 0;
+                background: linear-gradient(0deg, #101E23 -2.62%, rgba(16, 30, 35, 0) 87.97%);
+            }
+            .carousel-item {
+                margin-left: 10px;
+            }
+                .carousel-item:first-child {
+                margin-left: 0;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/scripts.js"></script>
 </head>
 
-<body>
-    <section>
+<body class="relative">
+    <div class="absolute top-[48px] left-0 z-10 w-full">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <h1>Digital Marketing <br />
-                        For Startups</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis hic sit, perferendis, eos
-                        porro
-                        recusandae
-                        suscipit dolore accusamus amet veniam modi fugiat. Provident quia non consequatur magni quaerat
-                        eos
-                        debitis.</p>
+            <div class="flex items-center justify-between">
+                <img class="h-[72px]" src="./assets/images/logo.svg" alt="Caroline Mweberi Website Logo">
+                <a href="#" class="bg-charcoal-900 h-[64px] w-[64px] rounded-full flex items-center justify-center">
+                    <img src="./assets/images/hamburger.svg" height="16.67" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <header class="relative bg-no-repeat bg-cover bg-center h-[640px]"
+        style="background-image: url('./assets/images/hero-image.png');">
+        <div class="container grid grid-cols-1 lg:grid-cols-2">
+            <div class="container z-10 mt-[160px]">
+                <img class="h-[10px] block mb-4" src="./assets/images/primary-squiggly.svg" />
+                <h1 class="text-white text-5xl mb-8 font-bold">Digital Marketing <br />
+                    For Startups</h1>
+                <p class="pb-10 text-white mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
+                    hic
+                    sit,
+                    perferendis,
+                    eos
+                    porro
+                    recusandae
+                    suscipit dolore accusamus amet veniam modi fugiat. Provident quia non consequatur magni
+                    quaerat
+                    eos
+                    debitis.</p>
 
-                    <a href="/find-out.html" class="btn btn-primary capitalize">Find Out How</a>
-                </div>
-                <div class="col-md-4">
-                    <img src="" alt="" />
-                </div>
+                <a href="/find-out.html" class="text-charcoal rounded background-gradient px-6 py-4">
+                    Find Out How
+                </a>
             </div>
         </div>
-    </section>
-    <section class="bg-accent">
+    </header>
+    <section class="bg-persian-green py-16">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="" alt="" />
+            <div class="grid grid-cols-1 lg:grid-cols-6 gap-8 items-center">
+                <div class="col-span-2">
+                    <img class="h-[400px] w-auto" src="./assets/images/call-to-action.png" alt="Is this for me image" />
                 </div>
-                <div class="col-md-8">
-                    <h3>Is this for me?</h3>
-                    <p>Let's put some happy little clouds in our world. Get tough with it, get strong. In nature, dead
+                <div class="col-span-4">
+                    <h3 class="text-charcoal-900 text-4xl mb-2 font-bold">Is this for me?</h3>
+                    <p class="text-black mb-8">Let's put some happy little clouds in our world. Get tough with it, get
+                        strong. In nature, dead
                         trees are just as normal
                         as live trees. Nice little clouds playing around in the sky.</p>
 
-                    <h3>Does it work?</h3>
-                    <p>Let's put some happy little clouds in our world. Get tough with it, get strong. In nature, dead
+                    <h3 class="text-charcoal-900 text-4xl mb-2 font-bold">Does it work?</h3>
+                    <p class="text-black mb-8">Let's put some happy little clouds in our world. Get tough with it, get
+                        strong. In nature, dead
                         trees are just as normal
                         as live trees. Nice little clouds playing around in the sky.</p>
                 </div>
@@ -52,108 +129,214 @@
         </div>
     </section>
     <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Projects I've<br /> Worked On</h3>
+        <div class="container py-16">
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-10 items-center">
+                <div class="col-span-2">
+                    <h3 class="text-5xl text-persian-green mb-4 font-bold">Projects I've<br /> Worked On</h3>
+                    <img class="h-[8px] block mb-6" src="./assets/images/golden-squiggly.svg"
+                        alt="Golden Squiggly Line">
                     <p>Let's put some happy little clouds in our world. Get tough with it, get strong. In nature, dead
                         trees are just as normal
                         as live trees. Nice little clouds playing around in the sky.</p>
                 </div>
-                <div class="col-md-8">
-                    Insert image carousel
+                <div class="col-span-4">
+                    <div class="owl-carousel">
+                        <div class="relative project-item bg-no-repeat bg-cover overflow-hidden rounded h-[360px] w-[300px] px-5 py-8 mr-20 flex flex-col justify-end"
+                            style="background-image: url('./assets/images/projects/project-01.png') ">
+                            <div class="z-10">
+                                <p class="text-white">01.</p>
+                                <p class="text-white text-xl mb-3">Positioning and Scaling a Money Transfer Wallet for
+                                    Cross
+                                    Border
+                                    Traders
+                                    and Refugees in
+                                    Easter...</p>
+                                <div class="flex gap-4">
+                                    <span class="bg-persian-green px-2 py-1 text-xs rounded-lg">Service 1</span>
+                                    <span class="background-gradient px-2 py-1 text-xs rounded-lg">Service 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative project-item bg-no-repeat bg-cover overflow-hidden rounded h-[360px] w-[300px] px-5 py-8 flex flex-col justify-end"
+                            style="background-image: url('./assets/images/projects/project-02.png') ">
+                            <div class="z-10">
+                                <p class="text-white">02.</p>
+                                <p class="text-white text-xl mb-3">Positioning and Scaling a Money Transfer Wallet for
+                                    Cross
+                                    Border
+                                    Traders
+                                    and Refugees in
+                                    Easter...</p>
+                                <div class="flex gap-4">
+                                    <span class="bg-persian-green px-2 py-1 text-xs rounded-lg">Service 1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative project-item bg-no-repeat bg-cover overflow-hidden rounded h-[360px] w-[300px] px-5 py-5 flex flex-col justify-end"
+                            style="background-image: url('./assets/images/projects/project-02.png') ">
+                            <div class="z-10">
+                                <p class="text-white">03.</p>
+                                <p class="text-white text-xl mb-3">Positioning and Scaling a Money Transfer Wallet for
+                                    Cross
+                                    Border
+                                    Traders
+                                    and Refugees in
+                                    Easter...</p>
+                                <div class="flex gap-4">
+                                    <span class="bg-persian-green px-2 py-1 text-xs rounded-lg">Service 1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative project-item bg-no-repeat bg-cover overflow-hidden rounded h-[360px] w-[300px] px-5 py-5 flex flex-col justify-end"
+                            style="background-image: url('./assets/images/projects/project-02.png') ">
+                            <div class="z-10">
+                                <p class="text-white">04.</p>
+                                <p class="text-white text-xl mb-3">Positioning and Scaling a Money Transfer Wallet for
+                                    Cross
+                                    Border
+                                    Traders
+                                    and Refugees in
+                                    Easter...</p>
+                                <div class="flex gap-4">
+                                    <span class="bg-persian-green px-2 py-1 text-xs rounded-lg">Service 1</span>
+                                    <span class="background-gradient px-2 py-1 text-xs rounded-lg">Service 2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="bg-beige">
+    <section class="bg-seashell py-16">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1>Services</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-7 mb-8">
+                <div class="col-span-3 col-start-3">
+                    <h3 class="text-center text-5xl text-charcoal-900 mb-4 font-bold">Services</h3>
+                    <img class="h-[8px] block mx-auto mb-4" src="./assets/images/golden-squiggly.svg" alt="">
                     <p class="text-center">Let's put some happy little clouds in our world. Get tough with it, get
                         strong. In nature, dead
                         trees are just as normal
                         as live trees. Nice little clouds playing around in the sky.</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 <div class="col-md-3">
-                    <div class="flex flex-column align-items-center">
-                        <img src="" alt="" />"
-                        <h5>Service Name</h5>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="overflow-hidden rounded-lg">
+                            <img class="h-[156px] w-[156px]" src="./assets/images/services/service-01.png" alt="" />
+                        </div>
+                        <h5 class="text-lg">Service Name</h5>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="flex flex-column align-items-center">
-                        <img src="" alt="" />"
-                        <h5>Service Name</h5>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="overflow-hidden rounded-lg">
+                            <img class="h-[156px] w-[156px]" src="./assets/images/services/service-02.png" alt="" />
+                        </div>
+                        <h5 class="text-lg">Service Name</h5>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="flex flex-column align-items-center">
-                        <img src="" alt="" />"
-                        <h5>Service Name</h5>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="overflow-hidden rounded-lg">
+                            <img class="h-[156px] w-[156px]" src="./assets/images/services/service-03.png" alt="" />
+                        </div>
+                        <h5 class="text-lg">Service Name</h5>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="flex flex-column align-items-center">
-                        <img src="" alt="" />"
-                        <h5>Service Name</h5>
+                    <div class="flex flex-col items-center gap-3">
+                        <div class="overflow-hidden rounded-lg">
+                            <img class="h-[156px] w-[156px]" src="./assets/images/services/service-04.png" alt="" />
+                        </div>
+                        <h5 class="text-lg">Service Name</h5>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section>
+    <section class="bg-persian-green text-primary py-16">
         <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <h1>Connect</h1>
-                    <p>Let's put some happy little clouds in our world. Get tough with it, get
+
+            <h3 class="text-black text-4xl mb-8 font-bold">Connect</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="col-span-10 lg:col-span-9">
+                    <p class="text-black pr-0 lg:pr-40">Let's put some happy little clouds in our world. Get tough with
+                        it,
+                        get
                         strong. In nature, dead
                         trees are just as normal
                         as live trees. Nice little clouds playing around in the sky.</p>
                 </div>
-                <div class="col-md-3">
-                    <a href="/contact-me">Contact Me</a>
+                <div class="col-span-2 lg:col-span-3">
+                    <a href="/contact-me" class="text-charcoal-900 background-gradient px-6 py-4 break-normal rounded">
+                        Contact Me
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-    <footer>
+    <footer class="bg-charcoal-800 text-white">
         <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                    <ul>
-                        <li>Projects</li>
-                        <li>About</li>
-                        <li>Services</li>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center py-16">
+                <div>
+                    <ul class="list-none">
+                        <li class="mb-2"><a href="#">Projects</a></li>
+                        <li class="mb-2"><a href="#">About</a></li>
+                        <li class="mb-2"><a href="#">Services</a></li>
                     </ul>
                 </div>
-                <div class="col-md-2">
-                    <ul>
-                        <li>Articles</li>
-                        <li>Podcast</li>
-                        <li>Contact</li>
+                <div>
+                    <ul class="list-none">
+                        <li class="mb-2"><a href="#">Articles</a></li>
+                        <li class="mb-2"><a href="#">Podcast</a></li>
+                        <li class="mb-2"><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-md-8 flex align-items-end">
-                    <ul>
-                        <li>LinkedIn</li>
-                        <li>Medium</li>
-                        <li>Email</li>
-                        <li>Press</li>
-                    </ul>
+                <div class="col-start-5 items-end justify-end">
+                    <div class="mb-4">
+                        <img class="h-[69px]" src="./assets/images/alt-logo.svg" alt="Caroline Mweberi Alternate Logo">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
+                            <a href="#" class="">
+                                <img class="max-h-[18px]" src="./assets/images/twitter-logo.svg" alt="Linkedin Logo">
+                            </a>
+                        </div>
+                        <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
+                            <a href="#" class="">
+                                <img class="max-h-[22px]" src="./assets/images/linkedin-logo.svg" alt="Linkedin Logo">
+                            </a>
+                        </div>
+                        <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
+                            <a href="#" class="">
+                                <img class="max-h-[22px]" src="./assets/images/facebook-logo.svg" alt="Facebook Logo">
+                            </a>
+                        </div>
+                        <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
+                            <a href="#" class="">
+                                <img class="max-h-[24px]" src="./assets/images/instagram-logo.svg" alt="Instagram Logo">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <p>Made in 🇰🇪 Copyright 2022</p>
+        </div>
+        <div class="bg-black py-3">
+            <div class="container">
+                <div class="grid grid-cols-1">
+                    <div>
+                        <p class="text-sm text-charcoal-500 font-work-sans mb-1 text-center">Made in 🇰🇪 Copyright 2022
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
