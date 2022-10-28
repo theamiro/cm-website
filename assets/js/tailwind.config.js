@@ -11,6 +11,8 @@ tailwind.config = {
 				black: "#161616",
 				seashell: "#F3EAE5",
 				"persian-green": "#2A9D8F",
+				"earth-yellow": "#CB9D52",
+				silver: "#C0C1C1",
 			},
 			fontFamily: {
 				sans: ["Inder", "sans-serif"],

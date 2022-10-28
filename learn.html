@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM - Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&family=Judson:wght@400;700&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="./styles.css" type="text/tailwindcss" />
+    <style type="text/tailwindcss">
+        @layer utilities {
+            * {
+                box-sizing: border-box;
+            }
+            .background-gradient {
+                background: linear-gradient(90deg, #edc474 0%, #cb9d52 60.94%, #b6853c 100%);
+            }
+            h1, h3 {
+                font-family: "Judson", serif !important;
+            }
+
+            p {
+                font-family: "Inder", sans-serif;
+                line-height: 1.61rem;
+            }
+            .container {
+                @apply max-w-6xl mx-auto;
+            }
+            header:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top:0;
+                left: 0;
+                background: linear-gradient(90deg, #101611 24.69%, rgba(16, 22, 17, 0) 64.55%);
+            }
+            .project-item:before {
+                position: absolute;
+                content: "";
+                height: 100%;
+                width: 100%;
+                top:0;
+                left: 0;
+                background: linear-gradient(0deg, #101E23 -2.62%, rgba(16, 30, 35, 0) 87.97%);
+            }
+            .carousel-item {
+                margin-left: 10px;
+            }
+                .carousel-item:first-child {
+                margin-left: 0;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/scripts.js"></script>
+</head>
+
+<body class="relative">
+    <div class="absolute top-[48px] left-0 z-10 w-full">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <img class="h-[72px]" src="./assets/images/logo.svg" alt="Caroline Mweberi Website Logo">
+                <a href="#" class="bg-charcoal-900 h-[64px] w-[64px] rounded-full flex items-center justify-center">
+                    <img src="./assets/images/hamburger.svg" height="16.67" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <header class="relative bg-no-repeat bg-cover bg-center h-[400px]"
+        style="background-image: url('./assets/images/hero-image.png');">
+        <div class="container grid grid-cols-1 lg:grid-cols-2">
+            <div class="container z-10 mt-[160px]">
+                <img class="h-[10px] block mb-4" src="./assets/images/primary-squiggly.svg" />
+                <h1 class="text-white text-4xl mb-8 font-bold">Learn or another awesome title</h1>
+                <p class="pb-10 text-white mb-2">
+                    This is probably the greatest thing to happen in my life - to be able
+                    to share this with you. Talk to trees, look at the
+                    birds. Whatever it takes.
+                </p>
+            </div>
+        </div>
+    </header>
+    <section class="bg-seashell py-16">
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="">
+                    <p class="text-earth-yellow mb-2">ARTICLE</p>
+                    <h3 class="text-3xl text-black font-bold mb-4">
+                        What have we learnt on the journey to oblivion and recognition?
+                    </h3>
+                    <p class="text-black text-lg mb-4">
+                        Massa sit pulvinar viverra blandit feugiat sed fermentum, ultrices. Sed senectus pellentesque
+                        sit sollicitudin sapien
+                        phasellus vel duis quam.
+                    </p>
+                    <a href="#" class="text-charcoal-900 text-lg flex gap-2 items-center">
+                        Read Article
+                        <i class="mr-2">
+                            <img class="h-[20px] w-[20px]" src="./assets/images/arrow-circle-right.svg" />
+                        </i>
+                    </a>
+                    <nav class="flex gap-7 my-8">
+                        <div class="block h-[5px] w-[91px] bg-earth-yellow rounded"></div>
+                        <div class="block h-[5px] w-[91px] bg-silver rounded"></div>
+                        <div class="block h-[5px] w-[91px] bg-silver rounded"></div>
+                        <div class="block h-[5px] w-[91px] bg-silver rounded"></div>
+                    </nav>
+                </div>
+                <div class="flex justify-end">
+                    <img class="h-[300px]" src="./assets/images/learn-image.png" alt="Learn Image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container pt-16 pb-8">
+            <div class="grid grid-cols-1">
+                <div class="mb-10">
+                    <h3 class="text-5xl text-persian-green font-bold">Listen</h3>
+                </div>
+                <div class="podcasts-carousel">
+                    <a href="#"
+                        class="hover:bg-seashell transition-colors px-4 py-4 rounded flex items-center gap-4 group w-[600px]">
+                        <div class="relative rounded-l transition-all group-hover:rounded min-h-[164px] min-w-[164px] bg-no-repeat bg-cover overflow-hidden flex items-center justify-center"
+                            style="background-image: url('./assets/images/podcast-01.png');">
+                            <img class="opacity-0 group-hover:opacity-100 transition-all delay-75 h-[48px] h-[48px]"
+                                src="./assets/images/play-circle.svg" alt="Play Podcast button">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl mb-4">Episode 24: What have we learnt along the journey</h3>
+                            <p class="mb-4 text-sm">You're the greatest thing that has ever been or ever will be. You're
+                                special. You're so
+                                very special...</p>
+                            <p class="text-xs">Aug 31, 2021<span class="mx-3 text-persian-green">•</span>15 min 22 sec
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-8">
+            <div class="grid grid-cols-1">
+                <div class="mb-10">
+                    <h3 class="text-5xl text-persian-green font-bold">Read</h3>
+                </div>
+                <div class="articles-carousel">
+                    <div>
+                        <a href="#"
+                            class="hover:bg-seashell transition-colors px-4 pt-4 pb-6 rounded flex flex-col items-center gap-4 min-w-[600px] group">
+                            <div class="rounded-t group-hover:rounded transition-all h-[120px] w-full bg-no-repeat bg-cover"
+                                style="background-image: url('./assets/images/article-01.png');"></div>
+                            <div class="px-4">
+                                <h3 class="text-2xl mb-4 group-hover:underline transition-all">What have we learnt along
+                                    the journey to
+                                    oblivion and
+                                    recognition?</h3>
+                                <p class="mb-4 text-sm">You're the greatest thing that has ever been or ever will be.
+                                    You're
+                                    special. You're so
+                                    very special...</p>
+                                <p class="text-xs">Aug 31, 2021<span class="mx-3 text-persian-green">•</span>10 min
+                                    read</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-persian-green text-primary py-16">
+        <div class="container">
+            <h3 class="text-black text-4xl mb-8 font-bold">Connect</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="col-span-10 lg:col-span-9">
+                    <p class="text-black pr-0 lg:pr-40">Let's put some happy little clouds in our world. Get tough with
+                        it,
+                        get
+                        strong. In nature, dead
+                        trees are just as normal
+                        as live trees. Nice little clouds playing around in the sky.</p>
+                </div>
+                <div class="col-span-2 lg:col-span-3">
+                    <a href="/contact-me" class="text-charcoal-900 background-gradient px-6 py-4 break-normal rounded">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-charcoal-800 text-white">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center py-16">
+                <div>
+                    <ul class="list-none">
+                        <li class="mb-2"><a href="#">Projects</a></li>
+                        <li class="mb-2"><a href="#">About</a></li>
+                        <li class="mb-2"><a href="#">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-none">
+                        <li class="mb-2"><a href="#">Articles</a></li>
+                        <li class="mb-2"><a href="#">Podcast</a></li>
+                        <li class="mb-2"><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-start-5 items-end justify-end">
+                    <div class="mb-4">
+                        <img class="h-[69px]" src="./assets/images/alt-logo.svg" alt="Caroline Mweberi Alternate Logo">
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
+                            <a href="#" class="">
+                                <img class="max-h-[18px]" src="./assets/images/twitter-logo.svg" alt="Linkedin Logo">
+                            </a>
+                        </div>
+                        <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
+                            <a href="#" class="">
+                                <img class="max-h-[22px]" src="./assets/images/linkedin-logo.svg" alt="Linkedin Logo">
+                            </a>
+                        </div>
+                        <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
+                            <a href="#" class="">
+                                <img class="max-h-[22px]" src="./assets/images/facebook-logo.svg" alt="Facebook Logo">
+                            </a>
+                        </div>
+                        <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
+                            <a href="#" class="">
+                                <img class="max-h-[24px]" src="./assets/images/instagram-logo.svg" alt="Instagram Logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-black py-3">
+            <div class="container">
+                <div class="grid grid-cols-1">
+                    <div>
+                        <p class="text-sm text-charcoal-500 font-work-sans mb-1 text-center">Made in 🇰🇪 Copyright 2022
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
