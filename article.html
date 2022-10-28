@@ -88,7 +88,7 @@
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                 <div class="col-span-3">
-                    <a href="#" class="text-charcoal-800 mb-4 flex items-center gap-2">
+                    <a href="articles.html" class="text-charcoal-800 mb-4 flex items-center gap-2">
                         <img class="h-[11px]" src="./assets/images/back-icon.svg" alt="Back Icon">
                         Back to Articles</a>
                     <h1 class="text-6xl text-black font-bold mb-4">
@@ -104,7 +104,15 @@
                     </p>
                 </div>
                 <div class="col-span-2 flex justify-end">
-                    <img class="h-[300px]" src="./assets/images/learn-image.png" alt="Learn Image">
+                    <div class="flex flex-col items-end">
+                        <img class="h-[300px]" src="./assets/images/learn-image.png" alt="Learn Image">
+                        <a class="text-charcoal-900 text-xl flex items-center gap-4" href="#" id="share-modal-open"
+                            data-modal-toggle="popup-modal">
+                            <img class="h-[20px]" src="./assets/images/share-icon.svg" alt="Back Icon">
+                            Share
+                            this
+                            Article</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -249,9 +257,9 @@
                 </div>
                 <div>
                     <ul class="list-none">
-                        <li class="mb-2"><a href="#">Articles</a></li>
-                        <li class="mb-2"><a href="#">Podcast</a></li>
-                        <li class="mb-2"><a href="#">Contact</a></li>
+                        <li class="mb-2"><a href="articles.html">Articles</a></li>
+                        <li class="mb-2"><a href="podcasts.html">Podcast</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-start-5 items-end justify-end">
@@ -294,6 +302,85 @@
             </div>
         </div>
     </footer>
+
+    <div class="hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="share-modal">
+        <div class="fixed inset-0 bg-black bg-opacity-75 transition-opacity" id="share-modal-close"></div>
+        <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                <div
+                    class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                    <div class="bg-white p-8 sm:p-6">
+                        <div class="flex items-center justify-between">
+                            <h4>Share with</h4>
+                            <a href="#" id="share-modal-close">
+                                <img class="h-[14px] w-[14px]" src="./assets/images/close-icon.svg"
+                                    alt="Close Modal Icon">
+                            </a>
+                        </div>
+                        <div class="flex justify-between items-center gap-4 my-8">
+                            <a href="#" class="group">
+                                <div
+                                    class="rounded-2xl bg-black bg-opacity-5 group-hover:bg-persian-green group-hover:bg-opacity-10 h-[72px] w-[72px] flex items-center justify-center">
+                                    <img class="h-[24px]" src="./assets/images/linkedin-logo.svg" alt="">
+                                </div>
+                                <p
+                                    class="my-1 font-light text-black group-hover:text-persian-green text-center text-sm">
+                                    LinkedIn</p>
+                            </a>
+                            <a href="#" class="group">
+                                <div
+                                    class="rounded-2xl bg-black bg-opacity-5 group-hover:bg-persian-green group-hover:bg-opacity-10 h-[72px] w-[72px] flex items-center justify-center">
+                                    <img class="h-[24px]" src="./assets/images/facebook-logo.svg" alt="">
+                                </div>
+                                <p
+                                    class="my-1 font-light text-black group-hover:text-persian-green text-center text-sm">
+                                    Facebook</p>
+                            </a>
+                            <a href="#" class="group">
+                                <div
+                                    class="rounded-2xl bg-black bg-opacity-5 group-hover:bg-persian-green group-hover:bg-opacity-10 h-[72px] w-[72px] flex items-center justify-center">
+                                    <img class="h-[24px]" src="./assets/images/linkedin-logo.svg" alt="">
+                                </div>
+                                <p
+                                    class="my-1 font-light text-black group-hover:text-persian-green text-center text-sm">
+                                    Twitter
+                                </p>
+                            </a>
+                            <a href="#" class="group">
+                                <div
+                                    class="rounded-2xl bg-black bg-opacity-5 group-hover:bg-persian-green group-hover:bg-opacity-10 h-[72px] w-[72px] flex items-center justify-center">
+                                    <img class="h-[24px]" src="./assets/images/linkedin-logo.svg" alt="">
+                                </div>
+                                <p
+                                    class="my-1 font-light text-black group-hover:text-persian-green text-center text-sm">
+                                    Whatsapp</p>
+                            </a>
+                            <a href="#" class="group">
+                                <div
+                                    class="rounded-2xl bg-black bg-opacity-5 group-hover:bg-persian-green group-hover:bg-opacity-10 h-[72px] w-[72px] flex items-center justify-center">
+                                    <img class="h-[24px]" src="./assets/images/linkedin-logo.svg" alt="">
+                                </div>
+                                <p
+                                    class="my-1 font-light text-black group-hover:text-persian-green text-center text-sm">
+                                    E-mail
+                                </p>
+                            </a>
+                        </div>
+                        <p class="text-center text-charcoal-900">or share with link</p>
+                        <div class="relative cursor-pointer group rounded-lg bg-black bg-opacity-5 mt-4 mb-2">
+                            <div class="flex absolute inset-y-0 right-0 items-center px-5 pointer-events-none">
+                                <img src="./assets/images/copy-icon.svg" alt="Copy Link">
+                            </div>
+                            <input type="text" readonly
+                                class="w-full disabled text-charcoal-900 text-opacity-50 bg-transparent cursor-pointer focus:ring-transparent focus:border-transparent block pr-14 px-4 py-3"
+                                value="https://www.carolynemweberi.com/learn/what-are-we-going-t...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
         integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

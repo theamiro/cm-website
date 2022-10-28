@@ -13,6 +13,7 @@ tailwind.config = {
 				"persian-green": "#2A9D8F",
 				"earth-yellow": "#CB9D52",
 				silver: "#C0C1C1",
+				transparent: "transparent",
 			},
 			fontFamily: {
 				sans: ["Inder", "sans-serif"],

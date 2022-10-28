@@ -18,3 +18,4 @@ $(document).ready(function () {
 	$(".podcasts-carousel").owlCarousel()
 	$(".articles-carousel").owlCarousel()
 })
+
