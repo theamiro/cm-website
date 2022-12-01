@@ -11,7 +11,7 @@
                         as live trees. Nice little clouds playing around in the sky.</p>
                 </div>
                 <div class="col-span-2 lg:col-span-3">
-                    <a href="/contact-me" class="text-charcoal-900 background-gradient px-6 py-4 break-normal rounded">
+                    <a href="<?php echo site_url("/contact")?>" class="text-charcoal-900 background-gradient px-6 py-4 break-normal rounded">
                         Contact Me
                     </a>
                 </div>
@@ -23,41 +23,41 @@
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center py-16">
                 <div>
                     <ul class="list-none">
-                        <li class="mb-2"><a href="#">Projects</a></li>
-                        <li class="mb-2"><a href="#">About</a></li>
-                        <li class="mb-2"><a href="#">Services</a></li>
+                        <li class="mb-2"><a href="<?php echo site_url("/")?>">Projects</a></li>
+                        <li class="mb-2"><a href="<?php echo site_url("/about")?>">About</a></li>
+                        <li class="mb-2"><a href="<?php echo site_url("/")?>">Services</a></li>
                     </ul>
                 </div>
                 <div>
                     <ul class="list-none">
-                        <li class="mb-2"><a href="articles.html">Articles</a></li>
-                        <li class="mb-2"><a href="podcasts.html">Podcast</a></li>
-                        <li class="mb-2"><a href="contact.html">Contact</a></li>
+                        <li class="mb-2"><a href="<?php echo site_url("/articles")?>">Articles</a></li>
+                        <li class="mb-2"><a href="<?php echo site_url("/podcasts")?>">Podcast</a></li>
+                        <li class="mb-2"><a href="<?php echo site_url("/contact")?>">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-start-5 items-end justify-end">
                     <div class="mb-4">
-                        <img class="h-[69px]" src="./assets/images/alt-logo.svg" alt="Caroline Mweberi Alternate Logo">
+                        <img class="h-[69px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/alt-logo.svg'?>" alt="Caroline Mweberi Alternate Logo">
                     </div>
                     <div class="flex items-center justify-between">
                         <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
                             <a href="#" class="">
-                                <img class="max-h-[18px]" src="./assets/images/twitter-logo.svg" alt="Linkedin Logo">
+                                <img class="max-h-[18px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/twitter-logo.svg'?>" alt="Linkedin Logo">
                             </a>
                         </div>
                         <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
                             <a href="#" class="">
-                                <img class="max-h-[22px]" src="./assets/images/linkedin-logo.svg" alt="Linkedin Logo">
+                                <img class="max-h-[22px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/linkedin-logo.svg'?>" alt="Linkedin Logo">
                             </a>
                         </div>
                         <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
                             <a href="#" class="">
-                                <img class="max-h-[22px]" src="./assets/images/facebook-logo.svg" alt="Facebook Logo">
+                                <img class="max-h-[22px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/facebook-logo.svg'?>" alt="Facebook Logo">
                             </a>
                         </div>
                         <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
                             <a href="#" class="">
-                                <img class="max-h-[24px]" src="./assets/images/instagram-logo.svg" alt="Instagram Logo">
+                                <img class="max-h-[24px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/instagram-logo.svg'?>" alt="Instagram Logo">
                             </a>
                         </div>
                     </div>
@@ -68,16 +68,13 @@
             <div class="container">
                 <div class="grid grid-cols-1">
                     <div>
-                        <p class="text-sm text-charcoal-500 font-work-sans mb-1 text-center">Made in 🇰🇪 Copyright 2022
+                        <p class="text-sm text-charcoal-500 font-work-sans mb-1 text-center">Made in 🇰🇪 Copyright <?php echo date("Y")?>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
-        integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <?php wp_footer(); ?>
 </body>
-
 </html>

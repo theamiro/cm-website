@@ -2,17 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <title><?php echo get_bloginfo("name")?> | <?php get_bloginfo("description")?></title>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CM - Website</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inder&family=Judson:wght@400;700&family=Work+Sans&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/tailwind.config.js"></script>
-    <link rel="stylesheet" href="./styles.css" type="text/tailwindcss" />
+    <?php wp_head(); ?>
     <style type="text/tailwindcss">
         @layer utilities {
             * {
@@ -25,7 +19,7 @@
                 font-family: "Judson", serif !important;
             }
 
-            p {
+            body {
                 font-family: "Inder", sans-serif;
                 line-height: 1.61rem;
             }
@@ -58,25 +52,52 @@
             }
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
-        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
-        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/scripts.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#da373d",
+                        charcoal: {
+                            500: "#4B6874",
+                            800: "#101E23",
+                            900: "#264653",
+                        },
+                        black: "#161616",
+                        seashell: "#F3EAE5",
+                        "persian-green": "#2A9D8F",
+                        "earth-yellow": "#CB9D52",
+                        silver: "#C0C1C1",
+                        transparent: "transparent",
+                    },
+                    fontFamily: {
+                        sans: ["Inder", "sans-serif"],
+                        serif: ["Judson", "serif"],
+                        alternate: ["Work Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
 </head>
 
-<body class="relative">
+<body class="relative overflow-x-hidden">
+    <!-- <div class="absolute bg-seashell h-screen w-screen top-0 left-0 z-[99]" id="preloader">
+        <div class="absolute h-[80px] w-[80px] top-[50%] left-[50%] -m-[40px] -m-[40px]">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div> -->
     <div class="absolute top-[48px] left-0 z-10 w-full">
         <div class="container">
             <div class="flex items-center justify-between">
-                <img class="h-[72px]" src="./assets/images/logo.svg" alt="Caroline Mweberi Website Logo">
+                <a href="<?php echo get_home_url() ?>">
+                    <img class="h-[72px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.svg'?>" alt="Caroline Mweberi Website Logo">
+                </a>
                 <a href="#" class="bg-charcoal-900 h-[64px] w-[64px] rounded-full flex items-center justify-center">
-                    <img src="./assets/images/hamburger.svg" height="16.67" />
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/hamburger.svg'?>" height="16.67" />
                 </a>
             </div>
         </div>
