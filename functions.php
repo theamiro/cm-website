@@ -77,3 +77,37 @@ remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
 remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
 remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+add_action('init', 'podcasts_register');
+function podcasts_register() {
+    $labels = array(
+        'name' => _x('Podcast', 'post type general name'),
+        'singular_name' => _x('Podcast', 'post type singular name'),
+        'add_new' => _x('Add New', 'Podcast episode'),
+        'add_new_item' => __('New Episode'),
+        'edit_item' => __('Edit Episode'),
+        'new_item' => __('New Episode'),
+        'view_item' => __('View Episode'),
+        'search_items' => __('Search Episodes'),
+        'not_found' =>  __('Nothing found'),
+        'not_found_in_trash' => __('Nothing found in Trash'),
+        'parent_item_colon' => ''
+    );
+    
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'query_var' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-format-audio',
+        'show_in_nav_menus' => false,
+        'has_archive' => false,
+        'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' )
+        ); 
+    
+    register_post_type( 'podcast', $args );
+}

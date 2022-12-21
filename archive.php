@@ -1,7 +1,18 @@
-<?php
-    get_header();
-?>
-<?php get_template_part("partials/page-header", "Header", array("title" => "Articles", "subtitle" => "This is probably the greatest thing to happen in my life - to be able to share this with you. Talk to trees, look at the birds. Whatever it takes."))?>
+<?php get_header()?>
+<header class="relative bg-no-repeat bg-cover bg-center h-[400px]"
+        style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/hero-image.png'?>);">
+        <div class="container grid grid-cols-1 lg:grid-cols-2">
+            <div class="container z-10 mt-[160px]">
+                <img class="h-[10px] block mb-4" src="<?php echo get_template_directory_uri() . '/assets/images/primary-squiggly.svg'?>" />
+                <h1 class="text-white text-4xl mb-8 font-bold"><?php the_title() ?></h1>
+                <p class="pb-10 text-white mb-2">
+                    This is probably the greatest thing to happen in my life - to be able
+                    to share this with you. Talk to trees, look at the
+                    birds. Whatever it takes.
+                </p>
+            </div>
+        </div>
+    </header>
     <section class="bg-seashell py-16">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">

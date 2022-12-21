@@ -1,46 +1,29 @@
 <?php get_header()?>
-<header class="relative bg-no-repeat bg-cover bg-center h-[460px]"
-        style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/about-header.png'?>);">
+<header class="relative bg-no-repeat bg-cover bg-top h-[460px]"
+        style="background-image: url(<?php echo get_field("hero")["background_image"]?>);">
         <div class="container grid grid-cols-1 lg:grid-cols-2">
             <div class="container z-10 mt-[160px]">
                 <img class="h-[10px] block mb-4" src="<?php echo get_template_directory_uri() . '/assets/images/primary-squiggly.svg'?>" />
-                <h1 class="text-white text-5xl mb-8 font-bold">Communication & Brand Management Professional</h1>
-                <p class="pb-10 text-white mb-2 text-xl">That's what painting is all about. It should make you feel good
-                    when
-                    you paint.</p>
+                <h1 class="text-white text-5xl mb-8 font-bold"><?php echo get_field("hero")["title"]?></h1>
+                <p class="pb-10 text-white mb-2 text-lg"><?php echo get_field("hero")["subtitle"]?></p>
             </div>
         </div>
     </header>
     <section class="bg-seashell py-16 relative">
         <div class="container">
-            <div class="grid grid-cols-2 items-center">
-                <div>
-                    <p class="text-center text-lg text-charcoal-800 px-2 md:px-16">Let's put some happy little clouds in
-                        our
-                        world.
-                        Get
-                        tough with it, get
-                        strong.
-                        In nature, dead trees
-                        are just as normal
-                        as live trees. Nice little clouds playing around in the sky.</p>
-                </div>
-                <div class="absolute right-60 bottom-0">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/images/about-cutout.png'?>" alt="About Cutout Image">
+            <div class="grid grid-cols-5 items-center">
+                <div class="col-span-3 col-start-2">
+                    <p class="text-center text-lg text-charcoal-800 px-2 md:px-16"><?php echo get_field("excerpt")["primary_subtitle"]?></p>
                 </div>
             </div>
         </div>
     </section>
     <section class="bg-persian-green py-16 z-10">
         <div class="container">
-            <div class="grid grid-cols-1 items-center px-2 md:px-40">
-                <p class="text-center text-charcoal-800">Let's put some happy little clouds in our world. Get
-                    tough with it, get
-                    strong.
-                    In nature, dead trees
-                    are just as normal
-                    as live trees. Nice little clouds playing around in the sky. Get tough with it, get strong. In
-                    nature, dead trees.</p>
+            <div class="grid grid-cols-5 items-center px-2">
+                <div class="col-span-3 col-start-2">
+                    <p class="text-center text-charcoal-800 text-lg"><?php echo get_field("excerpt")["secondary_subtitle"]?></p>
+                </div>
             </div>
         </div>
     </section>
@@ -48,12 +31,9 @@
         <div class="container pt-16 pb-8">
             <div class="grid grid-cols-1 lg:grid-cols-7 mb-8">
                 <div class="col-span-3 col-start-3">
-                    <h3 class="text-center text-5xl text-charcoal-900 mb-4 font-bold">Learn</h3>
-                    <img class="h-[8px] block mx-auto mb-4" src="./assets/images/golden-squiggly.svg" alt="">
-                    <p class="text-center">Let's put some happy little clouds in our world. Get tough with it, get
-                        strong. In nature, dead
-                        trees are just as normal
-                        as live trees. Nice little clouds playing around in the sky.</p>
+                    <h3 class="text-center text-5xl text-charcoal-900 mb-4 font-bold"><?php echo get_field("learn")["title"]?></h3>
+                    <img class="h-[8px] block mx-auto mb-4" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/golden-squiggly.svg'?>" alt="">
+                    <p class="text-center"><?php echo get_field("learn")["subtitle"]?></p>
                 </div>
             </div>
             <?php get_template_part("partials/styled-title", "", array("title" => "Listen")) ?>

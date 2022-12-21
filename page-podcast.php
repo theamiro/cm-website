@@ -1,18 +1,18 @@
 <?php
     get_header();
+    $title = get_the_title()
 ?>
-<?php get_template_part("partials/page-header", "Header", array("title" => "Articles", "subtitle" => "This is probably the greatest thing to happen in my life - to be able to share this with you. Talk to trees, look at the birds. Whatever it takes."))?>
+<?php get_template_part("partials/page-header", "Header", array("title" => $title, "subtitle" => "This is probably the greatest thing to happen in my life - to be able to share this with you. Talk to trees, look at the birds. Whatever it takes."))?>
     <section class="bg-seashell py-16">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div class="">
-                    <p class="text-earth-yellow mb-2 uppercase">FEATURED ARTICLES</p>
+                    <p class="text-earth-yellow mb-2">LATEST PODCASTS</p>
                     <?php
-                        $stickies = get_option( 'sticky_posts' );
                         $args = array(
-                            'post_type' => 'post',
+                            'post_type' => 'podcast',
                             'posts_per_page' => 4,
-                            'post__in' => $stickies
+                            'post_status' => 'publish'
                         );
                         $query = new WP_Query($args);
                         while ($query->have_posts()) :
@@ -20,15 +20,13 @@
                     ?>
                     <div class="item">
                         <h3 class="text-3xl text-black font-bold mb-4">
-                            What have we learnt on the journey to oblivion and recognition?
+                            <?php the_title(); ?>
                         </h3>
                         <p class="text-black text-lg mb-4">
-                            Massa sit pulvinar viverra blandit feugiat sed fermentum, ultrices. Sed senectus pellentesque
-                            sit sollicitudin sapien
-                            phasellus vel duis quam.
+                            <?php the_excerpt(); ?>
                         </p>
                         <a href="<?php the_permalink() ?>" class="text-charcoal-900 text-lg flex gap-2 items-center">
-                            Read Article
+                            Listen to Podcast
                             <i class="mr-2">
                                 <img class="h-[20px] w-[20px]" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-circle-right.svg'?>" />
                             </i>
@@ -43,7 +41,7 @@
                     <?php wp_reset_postdata();?>  
                 </div>
                 <div class="flex justify-end">
-                    <img class="h-[300px]" src="<?php echo get_template_directory_uri() . '/assets/images/learn-image.png'?>" alt="Learn Image">
+                    <img class="h-[300px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/learn-image.png'?>" alt="Learn Image">
                 </div>
             </div>
         </div>
@@ -51,26 +49,32 @@
     <section>
         <div class="container py-16">
             <div class="grid grid-cols-1">
-                <?php get_template_part("partials/styled-title", "", array("title" => "Read")) ?>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <?php get_template_part("partials/styled-title", "", array("title" => "Listen"))?>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <?php
                         $args = array(
-                            'post_type' => 'post',
+                            'post_type' => 'podcast',
                             'posts_per_page' => -1,
+                            'post_status' => 'publish'
                         );
                         $query = new WP_Query($args);
                         while ($query->have_posts()) :
                             $query->the_post();
                     ?>
                     <div>
-                        <a href="<?php the_permalink() ?>"
-                            class="hover:bg-seashell transition-colors px-4 pt-4 pb-6 rounded flex flex-col items-start gap-4 group">
-                            <div class="rounded-t group-hover:rounded transition-all h-[120px] w-full bg-no-repeat bg-cover"
-                                style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>);"></div>
-                            <div class="px-4">
-                                <h3 class="text-2xl mb-4 group-hover:underline transition-all"><?php the_title() ?></h3>
-                                <p class="mb-4 text-sm"><?php the_excerpt() ?></p>
-                                <p class="text-xs"><?php the_time("M d, Y") ?><span class="mx-3 text-persian-green">•</span>10 min read</p>
+                        <a href="<?php the_permalink()?>" class="hover:bg-seashell transition-colors px-4 py-4 rounded flex items-center gap-4 group">
+                            <div class="relative rounded-l transition-all group-hover:rounded min-h-[164px] min-w-[164px] bg-no-repeat bg-cover overflow-hidden flex items-center justify-center"
+                                style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>);">
+                                <img class="opacity-0 group-hover:opacity-100 transition-all delay-75 h-[48px] h-[48px]"
+                                    src="<?php echo get_template_directory_uri() . '/assets/images/play-circle.svg'?>" alt="Play Podcast button">
+                            </div>
+                            <div>
+                                <h3 class="text-2xl mb-4"><?php the_title(); ?></h3>
+                                <p class="mb-4 text-sm">You're the greatest thing that has ever been or ever will be. You're
+                                    special. You're so
+                                    very special...</p>
+                                <p class="text-xs">Aug 31, 2021<span class="mx-3 text-persian-green">•</span>15 min 22 sec
+                                </p>
                             </div>
                         </a>
                     </div>
@@ -81,7 +85,7 @@
                 </div>
                 <div class="flex justify-center items-center mt-12">
                     <a href="#" class="text-xl text-center text-charcoal-900">
-                        View More Articles
+                        View More Podcasts
                         <img class="h-[32px] w-[32px] mx-auto mt-6" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-down.svg'?>"
                             alt="arrow Down" />
                     </a>

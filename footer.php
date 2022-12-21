@@ -31,7 +31,7 @@
                 <div>
                     <ul class="list-none">
                         <li class="mb-2"><a href="<?php echo site_url("/articles")?>">Articles</a></li>
-                        <li class="mb-2"><a href="<?php echo site_url("/podcasts")?>">Podcast</a></li>
+                        <li class="mb-2"><a href="<?php echo site_url("/podcast")?>">Podcast</a></li>
                         <li class="mb-2"><a href="<?php echo site_url("/contact")?>">Contact</a></li>
                     </ul>
                 </div>

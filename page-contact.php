@@ -1,6 +1,6 @@
 <?php get_header()?>
-    <header class="relative bg-no-repeat bg-cover bg-center h-[480px]"
-        style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/hero-image.png'?>);">
+    <header class="relative bg-no-repeat bg-cover bg-top h-[480px]"
+        style="background-image: url(<?php echo get_field("hero")["background_image"]?>);">
         <div class="container grid grid-cols-1 lg:grid-cols-2">
             <div class="container z-10 mt-[160px]">
                 <img class="h-[10px] block mb-4" src="<?php echo get_template_directory_uri() . '/assets/images/primary-squiggly.svg'?>" />
@@ -12,24 +12,30 @@
             </div>
         </div>
     </header>
-    <section class="bg-persian-green py-16">
+    <section class="bg-seashell py-16">
         <div class="container">
-            <div class="grid grid-cols-1 lg:grid-cols-6 gap-8 items-center">
-                <div class="col-span-2">
-                    <img class="h-[400px] w-auto" src="<?php echo get_template_directory_uri() . '/assets/images/call-to-action.png'?>" alt="Is this for me image" />
-                </div>
-                <div class="col-span-4">
-                    <h3 class="text-charcoal-900 text-4xl mb-2 font-bold">Is this for me?</h3>
-                    <p class="text-black mb-8">Let's put some happy little clouds in our world. Get tough with it, get
-                        strong. In nature, dead
-                        trees are just as normal
-                        as live trees. Nice little clouds playing around in the sky.</p>
-
-                    <h3 class="text-charcoal-900 text-4xl mb-2 font-bold">Does it work?</h3>
-                    <p class="text-black mb-8">Let's put some happy little clouds in our world. Get tough with it, get
-                        strong. In nature, dead
-                        trees are just as normal
-                        as live trees. Nice little clouds playing around in the sky.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="">
+                    <h3 class="text-4xl text-charcoal-800 mb-4 font-bold">What I'm really good at...</h3>
+                    <p class="text-lg text-black mb-4">That's what painting is all about. It should make you feel good when you paint.</p>
+                    <div class="px-8 grid grid-cols-2 gap-y-8">
+                        <div class="text-lg flex items-center gap-4">
+                            <img class="h-[16px]" src="<?php echo get_template_directory_uri() . '/assets/images/star-icon.svg'?>"/>
+                            <p>Service Name</p>
+                        </div>
+                        <div class="text-lg flex items-center gap-4">
+                            <img class="h-[16px]" src="<?php echo get_template_directory_uri() . '/assets/images/star-icon.svg'?>"/>
+                            <p>Service Name</p>
+                        </div>
+                        <div class="text-lg flex items-center gap-4">
+                            <img class="h-[16px]" src="<?php echo get_template_directory_uri() . '/assets/images/star-icon.svg'?>"/>
+                            <p>Service Name</p>
+                        </div>
+                        <div class="text-lg flex items-center gap-4">
+                            <img class="h-[16px]" src="<?php echo get_template_directory_uri() . '/assets/images/star-icon.svg'?>"/>
+                            <p>Service Name</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -51,12 +57,12 @@
                             </div>
                         </div>
                         <div class="">
-                            <input type="text" class="block w-[75%] rounded bg-gray-100 px-4 py-5"
+                            <input type="text" class="block w-full rounded bg-gray-100 px-4 py-5"
                                 placeholder="Company name (optional)">
                             <p class="text-xs text-red-800 pl-4 pt-1">Enter a valid name</p>
                         </div>
                         <div>
-                            <textarea rows="3" class="block w-[75%] resize-none [rounded bg-gray-100 px-4 py-5"
+                            <textarea rows="3" class="block w-full resize-none [rounded bg-gray-100 px-4 py-5"
                                 placeholder="Project description"></textarea>
                             <p class="text-xs text-red-800 pl-4 pt-1">Enter a valid description</p>
                         </div>

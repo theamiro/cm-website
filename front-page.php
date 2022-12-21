@@ -1,25 +1,13 @@
 <?php get_header()?>
-<header class="relative bg-no-repeat bg-cover bg-center h-[640px]"
-        style="background-image: url(<?php echo get_stylesheet_directory_uri() .'/assets/images/hero-image.png'?>);">
+<header class="relative bg-no-repeat bg-cover bg-top h-[640px]"
+        style="background-image: url(<?php echo get_field("hero")["background_image"] ?>);">
     <div class="container grid grid-cols-1 lg:grid-cols-2">
         <div class="container z-10 mt-[160px]">
             <img class="h-[10px] block mb-4" src="<?php echo get_stylesheet_directory_uri() . "/assets/images/primary-squiggly.svg"?>" />
-            <h1 class="text-white text-5xl mb-8 font-bold">Digital Marketing <br />
-                For Startups</h1>
-            <p class="pb-10 text-white mb-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis
-                hic
-                sit,
-                perferendis,
-                eos
-                porro
-                recusandae
-                suscipit dolore accusamus amet veniam modi fugiat. Provident quia non consequatur magni
-                quaerat
-                eos
-                debitis.</p>
-
-            <a href="<?php echo site_url("/about")?>" class="text-charcoal rounded background-gradient px-6 py-4">
-                Find Out How
+            <h1 class="text-white text-5xl mb-8 font-bold"><?php echo get_field("hero")["title"]?></h1>
+            <p class="pb-10 text-white mb-2"><?php echo get_field("hero")["subtitle"]?></p>
+            <a href="<?php echo get_field("hero")["destination"]?>" class="text-charcoal rounded background-gradient px-6 py-4">
+                <?php echo get_field("hero")["call_to_action_title"]?>
             </a>
         </div>
     </div>
@@ -28,20 +16,14 @@
     <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-6 gap-8 items-center">
             <div class="col-span-2">
-                <img class="h-[400px] w-auto" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/call-to-action.png'?>" alt="Is this for me image" />
+                <img class="h-[400px] w-auto" src="<?php if(get_field("excerpt")["section_image"] != null): echo get_field("excerpt")["section_image"]; else: echo get_stylesheet_directory_uri() . '/assets/images/call-to-action.png'; endif;?>" alt="Is this for me image" />
             </div>
             <div class="col-span-4">
-                <h3 class="text-charcoal-900 text-4xl mb-2 font-bold">Is this for me?</h3>
-                <p class="text-black mb-8">Let's put some happy little clouds in our world. Get tough with it, get
-                    strong. In nature, dead
-                    trees are just as normal
-                    as live trees. Nice little clouds playing around in the sky.</p>
+                <h3 class="text-charcoal-900 text-4xl mb-2 font-bold"><?php echo get_field("excerpt")["primary_title"]?></h3>
+                <p class="text-black mb-8"><?php echo get_field("excerpt")["primary_subtitle"]?></p>
 
-                <h3 class="text-charcoal-900 text-4xl mb-2 font-bold">Does it work?</h3>
-                <p class="text-black mb-8">Let's put some happy little clouds in our world. Get tough with it, get
-                    strong. In nature, dead
-                    trees are just as normal
-                    as live trees. Nice little clouds playing around in the sky.</p>
+                <h3 class="text-charcoal-900 text-4xl mb-2 font-bold"><?php echo get_field("excerpt")["secondary_title"]?></h3>
+                <p class="text-black mb-8"><?php echo get_field("excerpt")["secondary_subtitle"]?></p>
             </div>
         </div>
     </div>
@@ -50,12 +32,10 @@
     <div class="container py-16">
         <div class="grid grid-cols-1 md:grid-cols-6 gap-10 items-center">
             <div class="col-span-2">
-                <h3 class="text-5xl text-persian-green mb-4 font-bold">Projects I've<br /> Worked On</h3>
+                <h3 class="text-5xl text-persian-green mb-4 font-bold"><?php echo get_field("projects")["title"]?></h3>
                 <img class="h-[8px] block mb-6" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/golden-squiggly.svg' ?>"
                     alt="Golden Squiggly Line">
-                <p>Let's put some happy little clouds in our world. Get tough with it, get strong. In nature, dead
-                    trees are just as normal
-                    as live trees. Nice little clouds playing around in the sky.</p>
+                <p><?php echo get_field("projects")["subtitle"]?></p>
             </div>
             <div class="col-span-4 overflow-hidden">
                 <div class="projects-carousel owl-theme">
@@ -130,12 +110,9 @@
     <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-7 mb-8">
             <div class="col-span-3 col-start-3">
-                <h3 class="text-center text-5xl text-charcoal-900 mb-4 font-bold">Services</h3>
+                <h3 class="text-center text-5xl text-charcoal-900 mb-4 font-bold"><?php echo get_field("services")["title"]?></h3>
                 <img class="h-[8px] block mx-auto mb-4" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/golden-squiggly.svg'?>" alt="">
-                <p class="text-center">Let's put some happy little clouds in our world. Get tough with it, get
-                    strong. In nature, dead
-                    trees are just as normal
-                    as live trees. Nice little clouds playing around in the sky.</p>
+                <p class="text-center"><?php echo get_field("projects")["subtitle"]?></p>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">

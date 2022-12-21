@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title><?php echo get_bloginfo("name")?> | <?php get_bloginfo("description")?></title>
+    <title><?php echo get_bloginfo("name")?> - <?php echo get_bloginfo("description")?></title>
+    <meta name="description" content="<?php echo get_bloginfo("description")?>">
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
