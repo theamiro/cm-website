@@ -24,12 +24,12 @@
                             <?php the_title(); ?>
                         </h3>
                         <p class="text-black text-lg mb-4">
-                            <?php the_excerpt(); ?>
+                            <?php echo substr(get_the_excerpt(), 0, 140) . "..."; ?>
                         </p>
                         <a href="<?php the_permalink() ?>" class="text-charcoal-900 text-lg flex gap-2 items-center">
                             Listen to Podcast
                             <i class="mr-2">
-                                <img class="h-[20px] w-[20px]" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-circle-right.svg'?>" />
+                                <img class="h-[20px] w-[20px]" src="<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>" />
                             </i>
                         </a>
                     </div>  
@@ -71,10 +71,8 @@
                             </div>
                             <div>
                                 <h3 class="text-2xl mb-4"><?php the_title(); ?></h3>
-                                <p class="mb-4 text-sm">You're the greatest thing that has ever been or ever will be. You're
-                                    special. You're so
-                                    very special...</p>
-                                <p class="text-xs">Aug 31, 2021<span class="mx-3 text-persian-green">•</span>15 min 22 sec
+                                <p class="mb-4 text-sm"><?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?></p>
+                                <p class="text-xs"><?php the_time("M d, Y") ?><span class="mx-3 text-persian-green">•</span>15 min 22 sec
                                 </p>
                             </div>
                         </a>
