@@ -44,7 +44,7 @@ jQuery(document).ready(function () {
 			controls: false,
 			nav: true,
 			navPosition: "bottom",
-			navContainer: ".articles-control",
+			navContainer: ".podcast-control",
 			slideBy: 1,
 			mouseDrag: true,
 			items: 1,

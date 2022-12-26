@@ -1,4 +1,12 @@
-<?php get_header();
+<?php
+/**
+* Template Name: Podcast Page
+*
+* @package WordPress
+* @subpackage CM_THEME
+* @since CM_THEME
+*/
+    get_header();
     $title = get_field("hero")["title"];
     $subtitle = get_field("hero")["subtitle"];
     $background_image = get_field("hero")["background_image"];
