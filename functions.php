@@ -53,15 +53,13 @@ add_action( 'widgets_init', 'cm_theme_widgets_init' );
 function cm_theme_scripts() {
 	wp_enqueue_style( 'owlcss', get_template_directory_uri() . "/assets/dist/owl/owl.carousel.min.css", array(), _S_VERSION );
     wp_enqueue_style( 'owlcss');
+    wp_enqueue_style( 'owltheme', get_template_directory_uri() . "/assets/dist/owl/owl.theme.default.min.css", array(), _S_VERSION );
+    wp_enqueue_style( 'owltheme');
     wp_enqueue_style( 'customcss', get_template_directory_uri() . "/assets/css/style.css", array(), _S_VERSION );
     wp_enqueue_style( 'customcss');
 
     wp_enqueue_script( 'owljs', get_template_directory_uri() . "/assets/dist/owl/owl.carousel.min.js", array("jquery"), _S_VERSION, true );
     wp_enqueue_script( 'owljs' );
-	wp_enqueue_script( 'tailwindjs', "//cdn.tailwindcss.com", array("jquery"), _S_VERSION, true );
-    wp_enqueue_script( 'tailwindjs' );
-	wp_enqueue_script( 'tailwindconfig', get_template_directory_uri() . "/assets/js/tailwind.config.js", array("jquery"), _S_VERSION, true );
-    wp_enqueue_script( 'tailwindconfig' );
     wp_enqueue_script( 'customjs', get_template_directory_uri() . "/assets/js/scripts.js", array("jquery"), _S_VERSION, false );
     wp_enqueue_script( 'customjs' );
 

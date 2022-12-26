@@ -1,4 +1,6 @@
-tailwind.config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+	content: ["./**/*.php"],
 	theme: {
 		extend: {
 			colors: {
@@ -22,4 +24,5 @@ tailwind.config = {
 			},
 		},
 	},
+	plugins: [],
 }
