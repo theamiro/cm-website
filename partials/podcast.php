@@ -1,4 +1,4 @@
-<a href="#" class="hover:bg-seashell transition-colors px-4 py-4 rounded flex items-center gap-4 group w-[600px]">
+<a javascript:void(0) class="hover:bg-seashell transition-colors px-4 py-4 rounded flex items-center gap-4 group w-[600px]">
     <div class="relative rounded-l transition-all group-hover:rounded min-h-[164px] min-w-[164px] bg-no-repeat bg-cover overflow-hidden flex items-center justify-center"
         style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/podcast-01.png'?>);">
         <img class="opacity-0 group-hover:opacity-100 transition-all delay-75 h-[48px] h-[48px]"

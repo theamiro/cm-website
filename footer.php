@@ -37,22 +37,22 @@
                     </div>
                     <div class="flex items-center justify-between">
                         <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
-                            <a href="#" class="">
+                            <a javascript:void(0) class="">
                                 <img class="max-h-[18px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/twitter-logo.svg'?>" alt="Linkedin Logo">
                             </a>
                         </div>
                         <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
-                            <a href="#" class="">
+                            <a javascript:void(0) class="">
                                 <img class="max-h-[22px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/linkedin-logo.svg'?>" alt="Linkedin Logo">
                             </a>
                         </div>
                         <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
-                            <a href="#" class="">
+                            <a javascript:void(0) class="">
                                 <img class="max-h-[22px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/facebook-logo.svg'?>" alt="Facebook Logo">
                             </a>
                         </div>
                         <div class="bg-charcoal-500 w-[48px] h-[48px] rounded-full flex items-center justify-center">
-                            <a href="#" class="">
+                            <a javascript:void(0) class="">
                                 <img class="max-h-[24px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/instagram-logo.svg'?>" alt="Instagram Logo">
                             </a>
                         </div>

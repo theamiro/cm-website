@@ -16,11 +16,11 @@
     <section>
         <div class="container py-16">
             <div class="mb-12 flex wrap gap-4 items-center justify-center">
-                <a class="rounded-md text-white bg-persian-green px-3 py-2 min-w-[60px] text-center" href="#">All</a>
+                <a class="rounded-md text-white bg-persian-green px-3 py-2 min-w-[60px] text-center" javascript:void(0)>All</a>
                 <?php
                     $categories = get_categories();
                     foreach($categories as $category):
-                        printf( '<a class="rounded-md text-white bg-charcoal-900 px-4 py-2 text-center" href="#">%1$s</a>',
+                        printf( '<a class="rounded-md text-white bg-charcoal-900 px-4 py-2 text-center" javascript:void(0)>%1$s</a>',
                             esc_html( $category->name )
                         );
                     endforeach;
@@ -62,7 +62,7 @@
                     ?>
             </div>
             <div class="flex justify-center items-center mt-12">
-                    <a href="#" class="text-xl text-center text-charcoal-900">
+                    <a javascript:void(0) class="text-xl text-center text-charcoal-900">
                         View More Projects
                         <img class="h-[32px] w-[32px] mx-auto mt-6" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-down.svg'?>"
                             alt="arrow Down" />

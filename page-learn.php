@@ -16,7 +16,7 @@
                         sit sollicitudin sapien
                         phasellus vel duis quam.
                     </p>
-                    <a href="#" class="text-charcoal-900 text-lg flex gap-2 items-center">
+                    <a javascript:void(0) class="text-charcoal-900 text-lg flex gap-2 items-center">
                         Read Article
                         <i class="mr-2">
                             <img class="h-[20px] w-[20px]" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-circle-right.svg'?>" />

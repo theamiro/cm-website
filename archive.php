@@ -91,7 +91,7 @@
                     ?>
                 </div>
                 <div class="flex justify-center items-center mt-12">
-                    <a href="#" class="text-xl text-center text-charcoal-900">
+                    <a javascript:void(0) class="text-xl text-center text-charcoal-900">
                         View More Articles
                         <img class="h-[32px] w-[32px] mx-auto mt-6" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-down.svg'?>"
                             alt="arrow Down" />

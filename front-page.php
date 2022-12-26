@@ -53,7 +53,7 @@
                             $query->the_post();
 
                     ?>
-                    <a href="<?php the_permalink(); ?>" class="relative project-item bg-no-repeat bg-cover overflow-hidden rounded h-[360px] min-w-[300px] px-5 py-8 flex flex-col justify-end"
+                    <a href="<?php the_permalink(); ?>" class="relative project-item bg-no-repeat bg-cover bg-center overflow-hidden rounded h-[360px] min-w-[300px] max-w-[300px] px-5 py-8 flex flex-col justify-end"
                         style="background-image: url(<?php if(has_post_thumbnail(get_the_ID())) : echo get_the_post_thumbnail_url(get_the_ID(),'full'); else: echo get_stylesheet_directory_uri() . '/assets/images/projects/project-01.png'; endif;?>) ">
                         <div class="z-10">
                             <p class="text-white"><?php echo str_pad($index,2,'0', STR_PAD_LEFT) ?>.</p>

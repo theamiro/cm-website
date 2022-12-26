@@ -157,6 +157,8 @@ function cm_theme_menu_fallback() {
 function atg_menu_classes($classes, $item, $args) {
   if($args->theme_location == 'footer-navigation') {
     $classes[] = '';
+  } else if ($args->theme_location == 'top-navigation') {
+    $classes[] = 'text-seashell text-5xl font-serif font-bold transition hover:text-silver';
   }
   return $classes;
 }
