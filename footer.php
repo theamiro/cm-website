@@ -1,3 +1,4 @@
+    <?php get_template_part("partials/share-sheet", "Share Sheet", array());?>
     <section class="bg-persian-green text-primary py-16">
         <div class="container">
             <h3 class="text-black text-4xl mb-8 font-bold">Connect</h3>

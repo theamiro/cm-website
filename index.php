@@ -80,7 +80,7 @@
                                 style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>);"></div>
                             <div class="px-4">
                                 <h3 class="text-2xl mb-4 group-hover:underline transition-all"><?php the_title() ?></h3>
-                                <p class="mb-4 text-sm"><?php the_excerpt() ?></p>
+                                <p class="mb-4 text-sm"><?php echo substr(get_the_excerpt(), 0, 200) . "..."; ?></p>
                                 <p class="text-xs"><?php the_time("M d, Y") ?><span class="mx-3 text-persian-green">•</span>10 min read</p>
                             </div>
                         </a>

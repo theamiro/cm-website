@@ -19,7 +19,7 @@
             <div class="col-span-2 flex justify-end">
                 <div class="flex flex-col items-end">
                     <img class="h-[300px]" src="<?php echo get_template_directory_uri() . '/assets/images/learn-image.png'?>" alt="Learn Image">
-                    <a class="text-charcoal-900 text-xl flex items-center gap-4" javascript:void(0) id="share-modal-open"
+                    <a class="text-charcoal-900 text-xl flex items-center gap-4 cursor-pointer" href="javascript:void(0)" id="share-modal-open"
                         data-modal-toggle="popup-modal">
                         <img class="h-[20px]" src="<?php echo get_template_directory_uri() . '/assets/images/share-icon.svg'?>" alt="Back Icon">
                         Share

@@ -7,9 +7,29 @@ jQuery(document).ready(function () {
 	jQuery("#close-menu").click(function () {
 		jQuery("#main-menu").addClass("opacity-0").addClass("hidden")
 	})
+
 	jQuery("#open-main-menu").click(function () {
 		jQuery("#main-menu").removeClass("hidden").removeClass("opacity-0")
 	})
+
+	jQuery("#share-modal-open").click(function () {
+		jQuery("#share-modal").removeClass("hidden").removeClass("opacity-0")
+	})
+
+	jQuery("#share-modal-close, #share-modal-bg").click(function () {
+		jQuery("#share-modal").addClass("opacity-0").addClass("hidden")
+		console.log("runs")
+	})
+
+	jQuery("#copy-share-link").click(function () {
+		navigator.clipboard.writeText(jQuery("#single-share").select()[0].defaultValue)
+		jQuery("#copied-badge").removeClass("hidden").removeClass("opacity-0")
+
+		setTimeout(function () {
+			jQuery("#copied-badge").addClass("opacity-0")
+		}, 3000)
+	})
+
 	if (jQuery(".projects-carousel").length) {
 		tns({
 			container: ".projects-carousel",
