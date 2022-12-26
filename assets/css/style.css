@@ -887,10 +887,6 @@ figcaption{
   width: auto;
 }
 
-.w-\[300px\]{
-  width: 300px;
-}
-
 .w-\[156px\]{
   width: 156px;
 }
@@ -915,6 +911,10 @@ figcaption{
   width: 600px;
 }
 
+.w-\[500px\]{
+  width: 500px;
+}
+
 .min-w-\[60px\]{
   min-width: 60px;
 }
@@ -931,12 +931,12 @@ figcaption{
   max-width: 300px;
 }
 
-.max-w-6xl{
-  max-width: 72rem;
-}
-
 .max-w-\[600px\]{
   max-width: 600px;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .resize-none{
@@ -1217,11 +1217,6 @@ figcaption{
   padding-bottom: 0.75rem;
 }
 
-.py-5{
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-}
-
 .py-20{
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -1230,6 +1225,11 @@ figcaption{
 .px-8{
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.py-5{
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pb-10{
@@ -1460,14 +1460,6 @@ header:before {
   background: linear-gradient(0deg, #101e23 -2.62%, rgba(16, 30, 35, 0) 87.97%);
 }
 
-.carousel-item {
-  margin-left: 10px;
-}
-
-.carousel-item:first-child {
-  margin-left: 0;
-}
-
 .article-content > h1{
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -1546,6 +1538,11 @@ header:before {
     height: 72px;
     opacity: 0;
   }
+}
+
+.tns-nav-active{
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(203 157 82 / var(--tw-bg-opacity)) !important;
 }
 
 .hover\:bg-seashell:hover{

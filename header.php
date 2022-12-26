@@ -8,63 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            * {
-                box-sizing: border-box;
-            }
-            .background-gradient {
-                background: linear-gradient(90deg, #edc474 0%, #cb9d52 60.94%, #b6853c 100%);
-            }
-            h1, h3 {
-                font-family: "Judson", serif !important;
-            }
-
-            body {
-                font-family: "Inder", sans-serif;
-                line-height: 1.61rem;
-            }
-            .container {
-                @apply max-w-6xl mx-auto;
-            }
-            header:before {
-                content: "";
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                top:0;
-                left: 0;
-                background: linear-gradient(90deg, #101611 24.69%, rgba(16, 22, 17, 0) 64.55%);
-            }
-            .project-item:before {
-                position: absolute;
-                content: "";
-                height: 100%;
-                width: 100%;
-                top:0;
-                left: 0;
-                background: linear-gradient(0deg, #101E23 -2.62%, rgba(16, 30, 35, 0) 87.97%);
-            }
-            .carousel-item {
-                margin-left: 10px;
-            }
-                .carousel-item:first-child {
-                margin-left: 0;
-            }
-        }
-    </style>
-    <script type="text/javascript">
-        jQuery(window).on("load", function () {
-            jQuery("body").removeClass("overflow-y-hidden")
-            jQuery("#preloader").addClass("opacity-0").addClass("hidden")
-        })
-        jQuery("#close-menu").on("click", function() {
-            jQuery("#main-menu").addClass("opacity-0").addClass("hidden")
-        })
-        jQuery("#open-main-menu").on("click", function() {
-            jQuery("#main-menu").removeClass("hidden").removeClass("opacity-0")
-        })
-    </script>
 </head>
 
 <body class="relative overflow-x-hidden overflow-y-hidden">

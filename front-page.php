@@ -47,80 +47,36 @@
                 <p><?php echo get_field("projects")["subtitle"]?></p>
             </div>
             <div class="col-span-4 overflow-hidden">
-                <div class="flex gap-8">
+                <div class="projects-carousel">
                     <?php
                         while ($query->have_posts()) :
                             $query->the_post();
 
                     ?>
-                    <a href="<?php the_permalink(); ?>" class="relative project-item bg-no-repeat bg-cover bg-center overflow-hidden rounded h-[360px] min-w-[300px] max-w-[300px] px-5 py-8 flex flex-col justify-end"
+                    <div>
+                        <a href="<?php the_permalink(); ?>" class="relative project-item bg-no-repeat bg-cover bg-center overflow-hidden rounded h-[360px] min-w-[300px] max-w-[300px] px-5 py-8 flex flex-col justify-end"
                         style="background-image: url(<?php if(has_post_thumbnail(get_the_ID())) : echo get_the_post_thumbnail_url(get_the_ID(),'full'); else: echo get_stylesheet_directory_uri() . '/assets/images/projects/project-01.png'; endif;?>) ">
-                        <div class="z-10">
-                            <p class="text-white"><?php echo str_pad($index,2,'0', STR_PAD_LEFT) ?>.</p>
-                            <p class="text-white text-xl mb-3"><?php echo substr(get_the_title(), 0, 85) . '...'?></p>
-                            <div class="flex gap-4">
-                                <?php 
-                                    $post_categories = wp_get_post_categories(get_the_ID());
-                                    $categories = array();
-                                    foreach($post_categories as $post_category):
-                                        $category = get_category($post_category);
-                                ?>
-                                    <span class="<?php if(end($post_categories) != $post_category): echo 'background-gradient'; else: echo 'bg-persian-green'; endif; ?> px-2 py-1 text-xs rounded-lg"><?php echo $category->name ?></span>
-                                <?php endforeach;?>
+                            <div class="z-10">
+                                <p class="text-white"><?php echo str_pad($index,2,'0', STR_PAD_LEFT) ?>.</p>
+                                <p class="text-white text-xl mb-3"><?php echo substr(get_the_title(), 0, 85) . '...'?></p>
+                                <div class="flex gap-4">
+                                    <?php 
+                                        $post_categories = wp_get_post_categories(get_the_ID());
+                                        $categories = array();
+                                        foreach($post_categories as $post_category):
+                                            $category = get_category($post_category);
+                                    ?>
+                                        <span class="<?php if(end($post_categories) != $post_category): echo 'background-gradient'; else: echo 'bg-persian-green'; endif; ?> px-2 py-1 text-xs rounded-lg"><?php echo $category->name ?></span>
+                                    <?php endforeach;?>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                     <?php
                         $index++;
                         endwhile;
                          wp_reset_postdata(); 
                     ?>
-                    <!-- <div class="item relative project-item bg-no-repeat bg-cover overflow-hidden rounded h-[360px] w-[300px] px-5 py-8 flex flex-col justify-end"
-                        style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/assets/images/projects/project-02.png'?>) ">
-                        <div class="z-10">
-                            <p class="text-white">02.</p>
-                            <p class="text-white text-xl mb-3">Positioning and Scaling a Money Transfer Wallet for
-                                Cross
-                                Border
-                                Traders
-                                and Refugees in
-                                Easter...</p>
-                            <div class="flex gap-4">
-                                <span class="bg-persian-green px-2 py-1 text-xs rounded-lg">Service 1</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item relative project-item bg-no-repeat bg-cover overflow-hidden rounded h-[360px] w-[300px] px-5 py-5 flex flex-col justify-end"
-                        style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/assets/images/projects/project-02.png'?>) ">
-                        <div class="z-10">
-                            <p class="text-white">03.</p>
-                            <p class="text-white text-xl mb-3">Positioning and Scaling a Money Transfer Wallet for
-                                Cross
-                                Border
-                                Traders
-                                and Refugees in
-                                Easter...</p>
-                            <div class="flex gap-4">
-                                <span class="bg-persian-green px-2 py-1 text-xs rounded-lg">Service 1</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item relative project-item bg-no-repeat bg-cover overflow-hidden rounded h-[360px] w-[300px] px-5 py-5 flex flex-col justify-end"
-                        style="background-image: url(<?php echo get_stylesheet_directory_uri() . '/assets/images/projects/project-02.png'?>) ">
-                        <div class="z-10">
-                            <p class="text-white">04.</p>
-                            <p class="text-white text-xl mb-3">Positioning and Scaling a Money Transfer Wallet for
-                                Cross
-                                Border
-                                Traders
-                                and Refugees in
-                                Easter...</p>
-                            <div class="flex gap-4">
-                                <span class="bg-persian-green px-2 py-1 text-xs rounded-lg">Service 1</span>
-                                <span class="background-gradient px-2 py-1 text-xs rounded-lg">Service 2</span>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

@@ -10,12 +10,23 @@
                 <div class="">
                     <p class="text-earth-yellow mb-2">LATEST PODCASTS</p>
                     <?php
+                        $stickies = get_option( 'sticky_posts' );
                         $args = array(
                             'post_type' => 'podcast',
                             'posts_per_page' => 4,
-                            'post_status' => 'publish'
+                            'post__in' => $stickies
                         );
                         $query = new WP_Query($args);
+                        if(!$query->have_posts()):
+                            $args = array(
+                                'post_type' => 'podcast',
+                                'posts_per_page' => 4,
+                            );
+                            $query = new WP_Query($args);
+                        endif;
+                    ?>
+                    <div class="podcast-page-carousel">
+                    <?php
                         while ($query->have_posts()) :
                             $query->the_post();
                     ?>
@@ -32,14 +43,17 @@
                                 <img class="h-[20px] w-[20px]" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-circle-right.svg'?>" />
                             </i>
                         </a>
-                    </div>  
-                    <?php endwhile;?>
-                        <nav class="flex gap-7 my-8">
-                            <?php foreach($query->posts as $post):?>
-                                <div class="block h-[5px] w-[91px] rounded bg-earth-yellow"></div>
-                            <?php endforeach; ?>
-                        </nav>
-                    <?php wp_reset_postdata();?>  
+                    </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    ?>  
+                    </div>
+                    <nav class="podcast-control flex gap-7 my-8">
+                        <?php for ($i=0; $i <= count($query->post); $i++):?>
+                        <div class="block h-[5px] w-[91px] rounded bg-silver cursor-pointer"></div>
+                        <?php endfor;?>
+                    </nav>
                 </div>
                 <div class="flex justify-end">
                     <img class="h-[300px]" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/learn-image.png'?>" alt="Learn Image">

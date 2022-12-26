@@ -121,3 +121,6 @@
 		opacity: 0;
 	}
 }
+.tns-nav-active {
+	@apply bg-earth-yellow !important;
+}

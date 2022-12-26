@@ -15,32 +15,43 @@
                             'post__in' => $stickies
                         );
                         $query = new WP_Query($args);
+                        if(!$query->have_posts()):
+                            $args = array(
+                                'post_type' => 'post',
+                                'posts_per_page' => 4,
+                            );
+                            $query = new WP_Query($args);
+                        endif;
+                    ?>
+                    <div class="articles-page-carousel">
+                    <?php
                         while ($query->have_posts()) :
                             $query->the_post();
                     ?>
                     <div class="item">
                         <h3 class="text-3xl text-black font-bold mb-4">
-                            What have we learnt on the journey to oblivion and recognition?
+                            <?php the_title(); ?>
                         </h3>
                         <p class="text-black text-lg mb-4">
-                            Massa sit pulvinar viverra blandit feugiat sed fermentum, ultrices. Sed senectus pellentesque
-                            sit sollicitudin sapien
-                            phasellus vel duis quam.
+                            <?php echo substr(get_the_excerpt(), 0, 200) . "..."; ?>
                         </p>
                         <a href="<?php the_permalink() ?>" class="text-charcoal-900 text-lg flex gap-2 items-center">
-                            Read Article
+                            Listen to Podcast
                             <i class="mr-2">
                                 <img class="h-[20px] w-[20px]" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-circle-right.svg'?>" />
                             </i>
                         </a>
-                    </div>  
-                    <?php endwhile;?>
-                        <nav class="flex gap-7 my-8">
-                            <?php foreach($query->posts as $post):?>
-                                <div class="block h-[5px] w-[91px] rounded bg-earth-yellow"></div>
-                            <?php endforeach; ?>
-                        </nav>
-                    <?php wp_reset_postdata();?>  
+                    </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    ?>  
+                    </div>
+                    <nav class="articles-control flex gap-7 my-8">
+                        <?php for ($i=0; $i <= count($query->post); $i++):?>
+                        <div class="block h-[5px] w-[91px] rounded bg-silver cursor-pointer"></div>
+                        <?php endfor;?>
+                    </nav>
                 </div>
                 <div class="flex justify-end">
                     <img class="h-[300px]" src="<?php echo get_template_directory_uri() . '/assets/images/learn-image.png'?>" alt="Learn Image">
