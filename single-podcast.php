@@ -34,6 +34,13 @@
     <div class="container">
         <div class="grid grid-cols-1 md:grid-cols-4">
             <div class="col-span-1 md:col-span-3 article-content">
+                <?php
+                    if(get_field("podcast_link") != null):
+                ?>
+                <div class="mb-8">
+                    <?php the_field("podcast_link")?>
+                </div>
+                <?php endif; ?>
                 <?php the_content() ?>
             </div>
         </div>
