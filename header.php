@@ -12,7 +12,7 @@
 
 <body class="relative overflow-x-hidden overflow-y-hidden">
     <div class="fixed bg-seashell h-screen w-screen top-0 left-0 z-[99] transition" id="preloader">
-        <div class="absolute h-[80px] w-[80px] top-[50%] left-[50%] -m-[40px] -m-[40px]">
+        <div class="absolute h-[80px] w-[80px] top-[50%] left-[50%] -m-[40px]">
             <div class="lds-ripple">
                 <div></div>
                 <div></div>
