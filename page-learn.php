@@ -1,4 +1,11 @@
 <?php
+/**
+* Template Name: Learn Page
+*
+* @package WordPress
+* @subpackage CM_THEME
+* @since CM_THEME
+*/
     get_header();
     $title = get_the_title()
 ?>

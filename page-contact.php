@@ -1,4 +1,13 @@
-<?php get_header()?>
+<?php
+/**
+* Template Name: Contact Page
+*
+* @package WordPress
+* @subpackage CM_THEME
+* @since CM_THEME
+*/
+    get_header();
+?>
     <header class="relative bg-no-repeat bg-cover bg-top h-[480px]"
         style="background-image: url(<?php echo get_field("hero")["background_image"]?>);">
         <div class="container grid grid-cols-1 lg:grid-cols-2">
