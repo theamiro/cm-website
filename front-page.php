@@ -28,6 +28,15 @@
         </div>
     </div>
 </section>
+<?php
+    $args = array(
+        'post_type' => 'projects',
+        'posts_per_page' => 5,
+    );
+    $query = new WP_Query($args);
+    $index = 1;
+    if($query->have_posts()):
+?>
 <section>
     <div class="container py-16">
         <div class="grid grid-cols-1 md:grid-cols-6 gap-10 items-center">
@@ -40,12 +49,6 @@
             <div class="col-span-4 overflow-hidden">
                 <div class="flex gap-8">
                     <?php
-                        $args = array(
-                            'post_type' => 'projects',
-                            'posts_per_page' => 5,
-                        );
-                        $query = new WP_Query($args);
-                        $index = 1;
                         while ($query->have_posts()) :
                             $query->the_post();
 
@@ -123,6 +126,9 @@
         </div>
     </div>
 </section>
+<?php
+    endif;
+?>
 <section class="bg-seashell py-16">
     <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-7 mb-8">

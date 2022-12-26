@@ -38,43 +38,63 @@
             </div>
             <?php get_template_part("partials/styled-title", "", array("title" => "Listen")) ?>
             <div class="mb-10">
+                <?php
+                    $args = array(
+                        'post_type' => 'podcast',
+                        'posts_per_page' => -1,
+                        'post_status' => 'publish'
+                    );
+                    $query = new WP_Query($args);
+                    while ($query->have_posts()) :
+                        $query->the_post();
+                ?>
                 <a href="#"
                     class="hover:bg-seashell transition-colors px-4 py-4 rounded flex items-center gap-4 group w-[560px]">
                     <div class="relative rounded-l transition-all group-hover:rounded min-h-[164px] min-w-[164px] bg-no-repeat bg-cover overflow-hidden flex items-center justify-center"
-                        style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/podcast-01.png'?>);">
+                        style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>);">
                         <img class="opacity-0 group-hover:opacity-100 transition-all delay-75 h-[48px] h-[48px]"
                             src="<?php echo get_template_directory_uri() . '/assets/images/play-circle.svg'?>" alt="Play Podcast button">
                     </div>
                     <div>
-                        <h3 class="text-2xl mb-4">Episode 24: What have we learnt along the journey</h3>
-                        <p class="mb-4 text-sm">You're the greatest thing that has ever been or ever will be. You're
-                            special. You're so
-                            very special...</p>
-                        <p class="text-xs">Aug 31, 2021<span class="mx-3 text-persian-green">•</span>15 min 22 sec
+                        <h3 class="text-2xl mb-4"><?php the_title(); ?></h3>
+                        <p class="mb-4 text-sm"><?php the_excerpt(); ?></p>
+                        <p class="text-xs"><?php the_time("M d, Y"); ?><span class="mx-3 text-persian-green">•</span>15 min 22 sec
                         </p>
                     </div>
                 </a>
+                <?php
+                    endwhile;
+                        wp_reset_postdata(); 
+                ?>
             </div>
             <?php get_template_part("partials/styled-title", "", array("title" => "Read")) ?>
             <div>
                 <div>
-                    <a href="article.html"
+                    <?php
+                        $args = array(
+                            'post_type' => 'post',
+                            'posts_per_page' => -1,
+                            'post_status' => 'publish'
+                        );
+                        $query = new WP_Query($args);
+                        while ($query->have_posts()) :
+                            $query->the_post();
+                    ?>
+                    <a href="<?php the_permalink(); ?>"
                         class="hover:bg-seashell transition-colors px-4 pt-4 pb-6 rounded flex flex-col items-center gap-4 group w-[560px]">
                         <div class="rounded-t group-hover:rounded transition-all h-[120px] w-full bg-no-repeat bg-cover"
-                            style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/article-01.png'?>);"></div>
+                            style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>);"></div>
                         <div class="px-4">
-                            <h3 class="text-2xl mb-4 group-hover:underline transition-all">What have we learnt along
-                                the journey to
-                                oblivion and
-                                recognition?</h3>
-                            <p class="mb-4 text-sm">You're the greatest thing that has ever been or ever will be.
-                                You're
-                                special. You're so
-                                very special...</p>
-                            <p class="text-xs">Aug 31, 2021<span class="mx-3 text-persian-green">•</span>10 min
+                            <h3 class="text-2xl mb-4 group-hover:underline transition-all"><?php the_title()?></h3>
+                            <p class="mb-4 text-sm"><?php the_excerpt()?></p>
+                            <p class="text-xs"><?php the_time("M d, Y") ?><span class="mx-3 text-persian-green">•</span>10 min
                                 read</p>
                         </div>
                     </a>
+                    <?php
+                        endwhile;
+                         wp_reset_postdata(); 
+                    ?>
                 </div>
             </div>
         </div>
