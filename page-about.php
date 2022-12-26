@@ -36,15 +36,18 @@
                     <p class="text-center"><?php echo get_field("learn")["subtitle"]?></p>
                 </div>
             </div>
+             <?php
+                $args = array(
+                    'post_type' => 'podcast',
+                    'posts_per_page' => -1,
+                    'post_status' => 'publish'
+                );
+                $query = new WP_Query($args);
+                if($query->have_posts()):
+            ?>
             <?php get_template_part("partials/styled-title", "", array("title" => "Listen")) ?>
             <div class="mb-10">
                 <?php
-                    $args = array(
-                        'post_type' => 'podcast',
-                        'posts_per_page' => -1,
-                        'post_status' => 'publish'
-                    );
-                    $query = new WP_Query($args);
                     while ($query->have_posts()) :
                         $query->the_post();
                 ?>
@@ -57,7 +60,7 @@
                     </div>
                     <div>
                         <h3 class="text-2xl mb-4"><?php the_title(); ?></h3>
-                        <p class="mb-4 text-sm"><?php the_excerpt(); ?></p>
+                        <p class="mb-4 text-sm"><?php echo substr(get_the_excerpt(), 0, 85) . '...'?></p>
                         <p class="text-xs"><?php the_time("M d, Y"); ?><span class="mx-3 text-persian-green">•</span>15 min 22 sec
                         </p>
                     </div>
@@ -67,16 +70,22 @@
                         wp_reset_postdata(); 
                 ?>
             </div>
+            <?php
+                endif;
+            ?>
+            <?php
+                $args = array(
+                    'post_type' => 'post',
+                    'posts_per_page' => -1,
+                    'post_status' => 'publish'
+                );
+                $query = new WP_Query($args);
+                if($query->have_posts()):
+            ?>
             <?php get_template_part("partials/styled-title", "", array("title" => "Read")) ?>
             <div>
                 <div>
                     <?php
-                        $args = array(
-                            'post_type' => 'post',
-                            'posts_per_page' => -1,
-                            'post_status' => 'publish'
-                        );
-                        $query = new WP_Query($args);
                         while ($query->have_posts()) :
                             $query->the_post();
                     ?>
@@ -86,7 +95,7 @@
                             style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'full'); ?>);"></div>
                         <div class="px-4">
                             <h3 class="text-2xl mb-4 group-hover:underline transition-all"><?php the_title()?></h3>
-                            <p class="mb-4 text-sm"><?php the_excerpt()?></p>
+                            <p class="mb-4 text-sm"><?php echo substr(get_the_excerpt(), 0, 85) . '...'?></p>
                             <p class="text-xs"><?php the_time("M d, Y") ?><span class="mx-3 text-persian-green">•</span>10 min
                                 read</p>
                         </div>
@@ -97,6 +106,7 @@
                     ?>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </section>
 <?php get_footer()?>
