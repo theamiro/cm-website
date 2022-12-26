@@ -53,44 +53,23 @@
             }
         }
     </style>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#da373d",
-                        charcoal: {
-                            500: "#4B6874",
-                            800: "#101E23",
-                            900: "#264653",
-                        },
-                        black: "#161616",
-                        seashell: "#F3EAE5",
-                        "persian-green": "#2A9D8F",
-                        "earth-yellow": "#CB9D52",
-                        silver: "#C0C1C1",
-                        transparent: "transparent",
-                    },
-                    fontFamily: {
-                        sans: ["Inder", "sans-serif"],
-                        serif: ["Judson", "serif"],
-                        alternate: ["Work Sans", "sans-serif"],
-                    },
-                },
-            },
-        }
+    <script type="text/javascript">
+        jQuery(window).on("load", function () {
+            jQuery("body").removeClass("overflow-y-hidden")
+            jQuery("#preloader").addClass("opacity-0").addClass("hidden")
+        })
     </script>
 </head>
 
-<body class="relative overflow-x-hidden">
-    <!-- <div class="absolute bg-seashell h-screen w-screen top-0 left-0 z-[99]" id="preloader">
+<body class="relative overflow-x-hidden overflow-y-hidden">
+    <div class="absolute bg-seashell h-screen w-screen top-0 left-0 z-[99] transition" id="preloader">
         <div class="absolute h-[80px] w-[80px] top-[50%] left-[50%] -m-[40px] -m-[40px]">
             <div class="lds-ripple">
                 <div></div>
                 <div></div>
             </div>
         </div>
-    </div> -->
+    </div>
     <div class="absolute top-[48px] left-0 z-10 w-full">
         <div class="container">
             <div class="flex items-center justify-between">

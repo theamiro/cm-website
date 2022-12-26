@@ -21,19 +21,15 @@
     <footer class="bg-charcoal-800 text-white">
         <div class="container">
             <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 items-center py-16">
-                <div>
-                    <ul class="list-none">
-                        <li class="mb-2"><a href="<?php echo site_url("/")?>">Projects</a></li>
-                        <li class="mb-2"><a href="<?php echo site_url("/about")?>">About</a></li>
-                        <li class="mb-2"><a href="<?php echo site_url("/")?>">Services</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="list-none">
-                        <li class="mb-2"><a href="<?php echo site_url("/articles")?>">Articles</a></li>
-                        <li class="mb-2"><a href="<?php echo site_url("/podcast")?>">Podcast</a></li>
-                        <li class="mb-2"><a href="<?php echo site_url("/contact")?>">Contact</a></li>
-                    </ul>
+                <div class="col-span-2">
+                    <?php
+                        wp_nav_menu( array(
+                            'menu'           => 'Footer',
+                            'theme_location' => 'footer-navigation',
+                            'menu_class'     => 'h-[120px] max-h-[120px] list-none flex flex-col flex-wrap gap-y-3',
+                            'fallback_cb'    => "cm_theme_menu_fallback" 
+                        ) );
+                    ?>
                 </div>
                 <div class="col-start-5 items-end justify-end">
                     <div class="mb-4">
@@ -68,7 +64,8 @@
             <div class="container">
                 <div class="grid grid-cols-1">
                     <div>
-                        <p class="text-sm text-charcoal-500 font-work-sans mb-1 text-center">Made in 🇰🇪 Copyright <?php echo date("Y")?>
+                        <p class="text-sm text-charcoal-500 font-work-sans mb-1 text-center">
+                            Made in 🇰🇪 Copyright <?php echo date("Y")?>
                         </p>
                     </div>
                 </div>

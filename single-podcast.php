@@ -1,14 +1,14 @@
 <?php get_header()?>
 <header class="relative bg-no-repeat bg-cover bg-top h-[160px]"
-        style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/hero-image.png'?>);">
+        style="background-image: url(<?php if(has_post_thumbnail(get_the_ID())) : echo get_the_post_thumbnail_url(get_the_ID(),'full'); else: echo get_stylesheet_directory_uri() . '/assets/images/hero-image.png'; endif;?>);">
     </header>
 <section class="bg-white pt-16 pb-8">
     <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div class="col-span-3">
-                <a href="<?php echo esc_url(get_post_type_archive_link('post'));?>" class="text-charcoal-800 mb-4 flex items-center gap-2">
+                <a href="<?php echo esc_url(site_url('/podcast'));?>" class="text-charcoal-800 mb-4 flex items-center gap-2">
                     <img class="h-[11px]" src="<?php echo get_template_directory_uri() . '/assets/images/back-icon.svg'?>" alt="Back Icon">
-                    Back to Articles</a>
+                    Back to Podcasts</a>
                 <h1 class="text-6xl text-black font-bold mb-4">
                     <?php the_title()?>
                 </h1>
@@ -24,7 +24,7 @@
                         <img class="h-[20px]" src="<?php echo get_template_directory_uri() . '/assets/images/share-icon.svg'?>" alt="Back Icon">
                         Share
                         this
-                        Article</a>
+                        Podcast</a>
                 </div>
             </div>
         </div>

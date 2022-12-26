@@ -1,8 +1,9 @@
-<?php
-    get_header();
-    $title = get_the_title()
+<?php get_header();
+    $title = get_field("hero")["title"];
+    $subtitle = get_field("hero")["subtitle"];
+    $background_image = get_field("hero")["background_image"];
 ?>
-<?php get_template_part("partials/page-header", "Header", array("title" => $title, "subtitle" => "This is probably the greatest thing to happen in my life - to be able to share this with you. Talk to trees, look at the birds. Whatever it takes."))?>
+<?php get_template_part("partials/page-header", "Header", array("title" => $title, "subtitle" => $subtitle, "background_image" => $background_image))?>
     <section class="bg-seashell py-16">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
