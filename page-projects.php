@@ -17,8 +17,8 @@ get_header()?>
         </div>
     </div>
 </header>
-<section>
-    <div class="container py-16">
+<section class="bg-white pt-8 pb-16 with-upward-clip">
+    <div class="container">
         <?php
             $args = array(
                 'post_type' => 'projects',
@@ -33,7 +33,7 @@ get_header()?>
             <?php
                 $categories = get_categories();
                 foreach($categories as $category):
-                    printf( '<a class="rounded-md text-white bg-charcoal-900 px-4 py-2 text-center" javascript:void(0)>%1$s</a>',
+                    printf( '<a class="rounded-md text-white bg-charcoal-900 px-4 py-2 text-center cursor-pointer transition-colors hover:bg-persian-green" javascript:void(0)>%1$s</a>',
                         esc_html( $category->name )
                     );
                 endforeach;

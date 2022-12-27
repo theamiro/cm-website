@@ -1,4 +1,4 @@
-<header class="relative bg-no-repeat bg-cover bg-center h-[400px]"
+<header class="relative bg-no-repeat bg-cover bg-top h-[400px]"
         style="background-image: url(<?php if ($args['background_image'] != null): echo $args["background_image"]; else: echo get_the_post_thumbnail_url(); endif; ?>);">
     <div class="container grid grid-cols-1 lg:grid-cols-2">
         <div class="container z-10 mt-[160px]">

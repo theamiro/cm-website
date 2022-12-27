@@ -7,7 +7,7 @@
 * @since CM_THEME
 */
     get_header();?>
-<header class="relative bg-no-repeat bg-cover bg-top h-[460px]"
+<header class="relative bg-no-repeat bg-cover bg-top h-[560px]"
         style="background-image: url(<?php echo get_field("hero")["background_image"]?>);">
         <div class="container grid grid-cols-1 lg:grid-cols-2">
             <div class="container z-10 mt-[160px]">
@@ -17,7 +17,7 @@
             </div>
         </div>
     </header>
-    <section class="bg-seashell py-16 relative">
+    <section class="bg-seashell py-16 relative with-upward-clip">
         <div class="container">
             <div class="grid grid-cols-5 items-center">
                 <div class="col-span-3 col-start-2">

@@ -7,12 +7,12 @@
 * @since CM_THEME
 */
 get_header()?>
-<header class="relative bg-no-repeat bg-cover bg-top h-[640px]"
+<header class="relative bg-no-repeat bg-cover bg-top min-h-[720px] bg-persian-green"
         style="background-image: url(<?php echo get_field("hero")["background_image"] ?>);">
     <div class="container grid grid-cols-1 lg:grid-cols-2">
         <div class="container z-10 mt-[160px]">
             <img class="h-[10px] block mb-4" src="<?php echo get_stylesheet_directory_uri() . "/assets/images/primary-squiggly.svg"?>" />
-            <h1 class="text-white text-5xl mb-8 font-bold"><?php echo get_field("hero")["title"]?></h1>
+            <h1 class="text-white text-6xl mb-8 font-bold"><?php echo get_field("hero")["title"]?></h1>
             <p class="pb-10 text-white mb-2"><?php echo get_field("hero")["subtitle"]?></p>
             <a href="<?php echo get_field("hero")["destination"]?>" class="text-charcoal rounded background-gradient px-6 py-4">
                 <?php echo get_field("hero")["call_to_action_title"]?>
@@ -20,7 +20,7 @@ get_header()?>
         </div>
     </div>
 </header>
-<section class="bg-persian-green py-16">
+<section class="bg-persian-green py-12 with-upward-clip">
     <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-6 gap-8 items-center">
             <div class="col-span-2">
@@ -40,13 +40,14 @@ get_header()?>
     $args = array(
         'post_type' => 'projects',
         'posts_per_page' => 5,
+        'post_status' => "publish"
     );
     $query = new WP_Query($args);
     $index = 1;
     if($query->have_posts()):
 ?>
 <section>
-    <div class="container py-16">
+    <div class="container pt-16 pb-24">
         <div class="grid grid-cols-1 md:grid-cols-6 gap-10 items-center">
             <div class="col-span-2">
                 <h3 class="text-5xl text-persian-green mb-4 font-bold"><?php echo get_field("projects")["title"]?></h3>
@@ -93,13 +94,13 @@ get_header()?>
 <?php
     endif;
 ?>
-<section class="bg-seashell py-16">
+<section class="bg-seashell py-16 with-downward-clip with-downward-alt-clip">
     <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-7 mb-8">
             <div class="col-span-3 col-start-3">
                 <h3 class="text-center text-5xl text-charcoal-900 mb-4 font-bold"><?php echo get_field("services")["title"]?></h3>
                 <img class="h-[8px] block mx-auto mb-4" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/golden-squiggly.svg'?>" alt="">
-                <p class="text-center"><?php echo get_field("projects")["subtitle"]?></p>
+                <p class="text-center"><?php echo get_field("services")["subtitle"]?></p>
             </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">

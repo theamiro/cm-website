@@ -124,3 +124,44 @@
 .tns-nav-active {
 	@apply bg-earth-yellow !important;
 }
+
+.with-upward-clip {
+	@apply relative;
+}
+.with-upward-clip:before {
+	content: "";
+	position: absolute;
+	top: -100px;
+	left: 0;
+	@apply w-full h-[100px];
+	background-color: inherit;
+	z-index: 1;
+	clip-path: polygon(100% 0%, 100% 0, 100% 100%, 0% 100%);
+}
+.with-downward-clip {
+	@apply relative;
+}
+.with-downward-clip:before {
+	content: "";
+	position: absolute;
+	top: -50px;
+	left: 0;
+	@apply w-full h-[50px];
+	background-color: inherit;
+	z-index: 1;
+	clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 100%);
+}
+.with-downward-alt-clip {
+	@apply relative;
+}
+.with-downward-alt-clip:after {
+	content: "";
+	position: absolute;
+	top: -50px;
+	left: 0;
+	@apply w-full h-[50px];
+	background: linear-gradient(90deg, #edc474 0%, #cb9d52 60.94%, #b6853c 100%);
+	opacity: 0.6;
+	z-index: 0;
+	clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
+}

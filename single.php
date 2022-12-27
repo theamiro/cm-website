@@ -1,8 +1,8 @@
 <?php get_header()?>
-<header class="relative bg-no-repeat bg-cover bg-top h-[160px]"
+<header class="relative bg-no-repeat bg-cover bg-top h-[240px]"
         style="background-image: url(<?php echo get_template_directory_uri() . '/assets/images/hero-image.png'?>);">
     </header>
-<section class="bg-white pt-16 pb-8">
+<section class="bg-white pt-6 pb-8 with-upward-clip">
     <div class="container">
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
             <div class="col-span-3">

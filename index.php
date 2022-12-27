@@ -2,7 +2,7 @@
     get_header();
 ?>
 <?php get_template_part("partials/page-header", "Header", array("title" => "Articles", "subtitle" => "This is probably the greatest thing to happen in my life - to be able to share this with you. Talk to trees, look at the birds. Whatever it takes."))?>
-    <section class="bg-seashell py-16">
+    <section class="bg-seashell py-16 with-upward-clip">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div class="">
@@ -36,7 +36,7 @@
                             <?php echo substr(get_the_excerpt(), 0, 200) . "..."; ?>
                         </p>
                         <a href="<?php the_permalink() ?>" class="text-charcoal-900 text-lg flex gap-2 items-center">
-                            Listen to Podcast
+                            Read the Article
                             <i class="mr-2">
                                 <img class="h-[20px] w-[20px]" src="<?php echo get_template_directory_uri() . '/assets/images/arrow-circle-right.svg'?>" />
                             </i>

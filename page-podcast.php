@@ -12,7 +12,7 @@
     $background_image = get_field("hero")["background_image"];
 ?>
 <?php get_template_part("partials/page-header", "Header", array("title" => $title, "subtitle" => $subtitle, "background_image" => $background_image))?>
-    <section class="bg-seashell py-16">
+    <section class="bg-seashell py-16 with-upward-clip">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div class="">

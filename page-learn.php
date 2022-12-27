@@ -10,7 +10,7 @@
     $title = get_the_title()
 ?>
 <?php get_template_part("partials/page-header", "Header", array("title" => $title, "subtitle" => "This is probably the greatest thing to happen in my life - to be able to share this with you. Talk to trees, look at the birds. Whatever it takes."))?>
-    <section class="bg-seashell py-16">
+    <section class="bg-seashell py-16 with-upward-clip">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div class="">
