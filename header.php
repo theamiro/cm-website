@@ -10,7 +10,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="relative overflow-x-hidden overflow-y-hidden">
+<body class="relative overflow-x-hidden overflow-y-hidden <?php if(!is_user_logged_in()): echo 'overflow-hidden'; endif;?>">
     <div class="fixed bg-seashell h-screen w-screen top-0 left-0 z-[99] transition" id="preloader">
         <div class="absolute h-[80px] w-[80px] top-[50%] left-[50%] -m-[40px]">
             <div class="lds-ripple">
@@ -19,6 +19,15 @@
             </div>
         </div>
     </div>
+    <?php if(!is_user_logged_in()):?>
+    <div class="fixed bg-seashell h-screen w-screen top-0 left-0 z-[99] transition flex flex-col items-center justify-center" id="coming-soon">
+        <div class="container">
+            <img class="h-[350px] md:h-[300px] mx-auto mb-6 w-full" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/article-01.png'?>" alt="Is this for me image" />
+            <h1 class="mb-4 text-6xl text-center font-bold text-charcoal-900">Coming soon</h1>
+            <p class="text-lg text-center text-persian-green">The website is still under construction and will be ready soon. Stay tuned.</p>
+        </div>
+    </div>
+    <?php endif;?>
     <div class="fixed bg-charcoal-800 h-screen w-screen top-0 left-0 z-[98] transition py-20 hidden" id="main-menu">
         <div class="container">
             <div class="flex justify-end mb-20">
